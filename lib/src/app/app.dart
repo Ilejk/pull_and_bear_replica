@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pull_and_bear_replica/src/presentation/resources/routes_manager.dart';
+import 'package:pull_and_bear_replica/src/presentation/resources/theme_manager.dart';
 
 // ignore: must_be_immutable
 class MyApp extends StatefulWidget {
@@ -18,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.mainStartingPage,
+      initialRoute: Routes.splashRoute,
       theme: getApplicationTheme(),
     );
   }
