@@ -8,6 +8,7 @@ class StringsManager {
   static const String haveAccount = 'Already Have An Account ?';
   static const String home = 'Home';
   static const String login = 'Lgoin';
+  static const String loading = 'Loading...';
 }
 
 class StringsErrorManager {

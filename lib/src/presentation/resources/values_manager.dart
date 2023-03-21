@@ -47,5 +47,6 @@ class SizeManager {
 }
 
 class DurationManager {
-  static const int d300 = 300;
+  static const int ms300 = 300;
+  static const int s2 = 2;
 }
