@@ -9,6 +9,10 @@ class StringsManager {
   static const String loading = 'Loading...';
   static const String ok = 'Ok';
   static const String tryAgain = 'Try Again';
+  static const String success = 'Success';
+  static const String menu = 'Menu';
+  static const String myProfile = 'My Account';
+  static const String basket = 'Basket';
 }
 
 class StringsErrorManager {

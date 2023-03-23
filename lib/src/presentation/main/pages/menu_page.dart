@@ -1,14 +1,14 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MenuPage extends StatefulWidget {
+  const MenuPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MenuPage> createState() => _MenuPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Container();
