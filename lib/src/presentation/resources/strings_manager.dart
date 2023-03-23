@@ -12,6 +12,7 @@ class StringsManager {
 }
 
 class StringsErrorManager {
+  static const String success = 'Success';
   static const String badRequestError = "Bad Request Error";
   static const String noContent = "No Content";
   static const String forbiddenError = "Forbidden Error";
