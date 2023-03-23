@@ -81,3 +81,29 @@ class Community {
     this.image,
   );
 }
+
+class HomeData {
+  List<News> news;
+  List<MidSeason> midSeason;
+  List<Hollywood> hollywood;
+  List<Jeans> jeans;
+  List<TShirts> tShirts;
+  List<FanCorner> fanCorner;
+  List<Community> community;
+
+  HomeData(
+    this.news,
+    this.midSeason,
+    this.hollywood,
+    this.jeans,
+    this.tShirts,
+    this.fanCorner,
+    this.community,
+  );
+}
+
+class HomeObject {
+  HomeData data;
+
+  HomeObject(this.data);
+}

@@ -1,5 +1,3 @@
-import 'package:flutter_phoenix/generated/i18n.dart';
-
 class StringsManager {
   static const String noRouteFound = 'No Route Found';
   static const String search = 'Search';
@@ -9,6 +7,8 @@ class StringsManager {
   static const String home = 'Home';
   static const String login = 'Lgoin';
   static const String loading = 'Loading...';
+  static const String ok = 'Ok';
+  static const String tryAgain = 'Try Again';
 }
 
 class StringsErrorManager {
