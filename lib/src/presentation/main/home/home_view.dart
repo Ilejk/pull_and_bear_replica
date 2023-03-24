@@ -5,6 +5,7 @@ import 'package:pull_and_bear_replica/src/presentation/main/pages/my_profile_pag
 import 'package:pull_and_bear_replica/src/presentation/main/pages/search_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/menu_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/colors_manager.dart';
+import 'package:pull_and_bear_replica/src/presentation/resources/font_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/values_manager.dart';
 
@@ -30,12 +31,11 @@ class _HomeViewState extends State<HomeView> {
     StringsManager.basket,
     StringsManager.myProfile,
   ];
-  var _title = StringsManager.home;
+
   var _currentIndex = 0;
   ontap(int index) {
     setState(() {
       _currentIndex = index;
-      _title = titles[index];
     });
   }
 
@@ -43,9 +43,16 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: SizeManager.s0,
         title: Text(
-          _title,
-          style: Theme.of(context).textTheme.headline2,
+          StringsManager.pullAndBearTitle,
+          style: TextStyle(
+            fontSize: FontSize.s25,
+            fontWeight: FontWeight.bold,
+            letterSpacing: SizeManager.s3,
+            color: ColorManager.white,
+          ),
         ),
       ),
       body: pages[_currentIndex],

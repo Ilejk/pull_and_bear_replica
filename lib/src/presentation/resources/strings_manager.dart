@@ -13,6 +13,7 @@ class StringsManager {
   static const String menu = 'Menu';
   static const String myProfile = 'My Account';
   static const String basket = 'Basket';
+  static const String pullAndBearTitle = 'PULL&BEAR';
 }
 
 class StringsErrorManager {

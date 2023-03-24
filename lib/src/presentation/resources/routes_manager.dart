@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pull_and_bear_replica/src/app/directory_implementer.dart';
 import 'package:pull_and_bear_replica/src/presentation/favourites/favourites_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/forgot_password/forgot_password_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/login/login_view.dart';
@@ -28,6 +29,7 @@ class RouteGenerator {
       case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case Routes.mainRoute:
+        initHomeModule();
         return MaterialPageRoute(builder: (_) => const HomeView());
       case Routes.storeDetailsRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
