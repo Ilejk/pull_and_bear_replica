@@ -42,8 +42,11 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 50,
+        automaticallyImplyLeading: false,
         elevation: SizeManager.s0,
         title: Text(
           StringsManager.pullAndBearTitle,

@@ -14,6 +14,12 @@ class StringsManager {
   static const String myProfile = 'My Account';
   static const String basket = 'Basket';
   static const String pullAndBearTitle = 'PULL&BEAR';
+  static const String freeReturns = 'FREE STORE DELIVERY | FREE RETURNS';
+  static const String fanCornerSpacer = 'FAN CORNER';
+  static const String shop = 'Shop';
+  static const String pAbCommunity = '#PULLANDBEARCOMMUNITY';
+  static const String pAbCommunityInfo =
+      'Get inspired and share your Pull&Bear looks using\nthe #pullandbearcommunity hashtag and tag us at @pullandbear';
 }
 
 class StringsErrorManager {
