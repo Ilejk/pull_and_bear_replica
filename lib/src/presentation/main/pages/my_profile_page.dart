@@ -35,6 +35,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
         Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
       });
     });
+    _isUserLoggedInCheck();
   }
 
   @override
@@ -49,6 +50,17 @@ class _MyProfilePageState extends State<MyProfilePage> {
     super.dispose();
   }
 
+  bool isLoggedIn = false;
+  Future<void> _isUserLoggedInCheck() async {
+    _appPreferences.isUserLoggedIn().then((isUserLoggedIn) {
+      if (isUserLoggedIn) {
+        isLoggedIn = true;
+      } else {
+        isLoggedIn = false;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -60,7 +72,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     () {
                   _viewModel.login();
                 }) ??
-                Container();
+                _getContentWidget();
           },
         ),
       ),
@@ -68,89 +80,93 @@ class _MyProfilePageState extends State<MyProfilePage> {
   }
 
   Widget _getContentWidget() {
-    return SingleChildScrollView(
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: PaddingManager.p28,
-                right: PaddingManager.p28,
-              ),
-              child: StreamBuilder<bool>(
-                stream: _viewModel.outputIsUserNameValid,
-                builder: (context, snapshot) {
-                  return TextFormField(
-                    controller: _userNameController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      hintText: StringsManager.username,
-                      labelText: StringsManager.username,
-                      errorText: (snapshot.data ?? true)
-                          ? null
-                          : StringsManager.usernameError,
-                    ),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-              height: SizeManager.s28,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: PaddingManager.p28,
-                right: PaddingManager.p28,
-              ),
-              child: StreamBuilder<bool>(
-                stream: _viewModel.outputIsPasswordValid,
-                builder: (context, snapshot) {
-                  return TextFormField(
-                    controller: _passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
-                      hintText: StringsManager.password,
-                      labelText: StringsManager.password,
-                      errorText: (snapshot.data ?? true)
-                          ? null
-                          : StringsManager.passwordError,
-                    ),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-              height: SizeManager.s28,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: PaddingManager.p28,
-                right: PaddingManager.p28,
-              ),
-              child: StreamBuilder<bool>(
-                stream: _viewModel.outputIsAllInputValid,
-                builder: (context, snapshot) {
-                  return SizedBox(
-                    width: double.infinity,
-                    height: SizeManager.s40,
-                    child: ElevatedButton(
-                      onPressed: (snapshot.data ?? false)
-                          ? () {
-                              _viewModel.login();
-                            }
-                          : null,
-                      child: const Text(
-                        StringsManager.login,
+    if (isLoggedIn == true) {
+      return Container();
+    } else {
+      return SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: StreamBuilder<bool>(
+                  stream: _viewModel.outputIsUserNameValid,
+                  builder: (context, snapshot) {
+                    return TextFormField(
+                      controller: _userNameController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintText: StringsManager.username,
+                        labelText: StringsManager.username,
+                        errorText: (snapshot.data ?? true)
+                            ? null
+                            : StringsManager.usernameError,
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: SizeManager.s28,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: StreamBuilder<bool>(
+                  stream: _viewModel.outputIsPasswordValid,
+                  builder: (context, snapshot) {
+                    return TextFormField(
+                      controller: _passwordController,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        hintText: StringsManager.password,
+                        labelText: StringsManager.password,
+                        errorText: (snapshot.data ?? true)
+                            ? null
+                            : StringsManager.passwordError,
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: SizeManager.s28,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: StreamBuilder<bool>(
+                  stream: _viewModel.outputIsAllInputValid,
+                  builder: (context, snapshot) {
+                    return SizedBox(
+                      width: double.infinity,
+                      height: SizeManager.s40,
+                      child: ElevatedButton(
+                        onPressed: (snapshot.data ?? false)
+                            ? () {
+                                _viewModel.login();
+                              }
+                            : null,
+                        child: const Text(
+                          StringsManager.login,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
 }
