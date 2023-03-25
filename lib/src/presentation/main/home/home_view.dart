@@ -52,6 +52,11 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Colors.transparent,
         scrolledUnderElevation: SizeManager.s50,
         automaticallyImplyLeading: false,
+        leading: Icon(
+          Icons.search,
+          size: SizeManager.s24,
+          color: ColorManager.white,
+        ),
         elevation: SizeManager.s0,
         title: Text(
           StringsManager.pullAndBearTitle,
@@ -116,21 +121,31 @@ class _HomeViewState extends State<HomeView> {
       //TODO APPBAR BASKET
     } else if (isMyAccount) {
       return AppBar(
-        backgroundColor: Colors.transparent,
+        shape: Border(
+          bottom: BorderSide(
+            color: ColorManager.black,
+            width: SizeManager.s0_5,
+          ),
+        ),
+        backgroundColor: ColorManager.white,
         scrolledUnderElevation: SizeManager.s50,
         automaticallyImplyLeading: false,
         elevation: SizeManager.s0,
+        leading: Icon(
+          Icons.question_mark,
+          size: SizeManager.s24,
+          color: ColorManager.black,
+        ),
         title: Text(
-          StringsManager.pullAndBearTitle,
+          StringsManager.logInOrRegisterTitle,
           style: TextStyle(
-            fontSize: FontSize.s25,
+            fontSize: FontSize.s20,
             fontWeight: FontWeight.bold,
             letterSpacing: SizeManager.s3,
-            color: ColorManager.white,
+            color: ColorManager.black,
           ),
         ),
       );
-      //TODO APPBAR MY ACCOUNT
     } else {
       return AppBar(
         backgroundColor: Colors.transparent,

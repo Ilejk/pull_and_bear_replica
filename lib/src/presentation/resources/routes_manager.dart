@@ -4,6 +4,7 @@ import 'package:pull_and_bear_replica/src/presentation/favourites/favourites_vie
 import 'package:pull_and_bear_replica/src/presentation/forgot_password/forgot_password_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/login/login_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/home/home_view.dart';
+import 'package:pull_and_bear_replica/src/presentation/main/pages/my_profile_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/register/register_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/splash/splash_view.dart';
@@ -25,11 +26,12 @@ class RouteGenerator {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.loginRoute:
-        return MaterialPageRoute(builder: (_) => const LoginView());
+        return MaterialPageRoute(builder: (_) => const MyProfilePage());
       case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case Routes.mainRoute:
         initHomeModule();
+        initLoginModule();
         return MaterialPageRoute(builder: (_) => const HomeView());
       case Routes.storeDetailsRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());

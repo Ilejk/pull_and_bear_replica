@@ -192,3 +192,49 @@ class HomeResponse extends BaseResponse {
   factory HomeResponse.fromJson(Map<String, dynamic> json) =>
       _$HomeResponseFromJson(json);
 }
+
+@JsonSerializable()
+class CustomerRespose {
+  @JsonKey(name: "id")
+  String? id;
+  @JsonKey(name: "name")
+  String? name;
+  @JsonKey(name: "numOfNotifications")
+  int? numOfNotifications;
+
+  CustomerRespose(this.id, this.name, this.numOfNotifications);
+  factory CustomerRespose.fromJson(Map<String, dynamic> json) =>
+      _$CustomerResposeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CustomerResposeToJson(this);
+}
+
+@JsonSerializable()
+class ContactResponse {
+  @JsonKey(name: "email")
+  String? email;
+  @JsonKey(name: "phone")
+  String? phone;
+  @JsonKey(name: "link")
+  String? link;
+
+  ContactResponse(this.email, this.phone, this.link);
+  factory ContactResponse.fromJson(Map<String, dynamic> json) =>
+      _$ContactResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ContactResponseToJson(this);
+}
+
+@JsonSerializable()
+class AuthResponse extends BaseResponse {
+  @JsonKey(name: "customer")
+  CustomerRespose? customer;
+  @JsonKey(name: "contacts")
+  ContactResponse? contacts;
+
+  AuthResponse(this.customer, this.contacts);
+  factory AuthResponse.fromJson(Map<String, dynamic> json) =>
+      _$AuthResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AuthResponseToJson(this);
+}

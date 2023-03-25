@@ -25,6 +25,11 @@ class StringsManager {
       'THE PERFECT COMBO:\nON TREND AND WITCH A 10%\nDISCOUNT';
   static const String newsLetterText2 = 'SUBSCRIBE TO OUR NEWSLETTER';
   static const String imIn = 'I\'M IN';
+  static const String logInOrRegisterTitle = 'LOG IN/REGISTER';
+  static const String username = 'Username';
+  static const String usernameError = 'Invalid username';
+  static const String password = 'password';
+  static const String passwordError = 'Invalid password';
 }
 
 class StringsErrorManager {

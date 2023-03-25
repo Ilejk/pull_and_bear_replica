@@ -107,3 +107,37 @@ class HomeObject {
 
   HomeObject(this.data);
 }
+
+class Customer {
+  String id;
+  String name;
+  int numOfNotifications;
+
+  Customer(
+    this.id,
+    this.name,
+    this.numOfNotifications,
+  );
+}
+
+class Contacts {
+  String email;
+  String phone;
+  String link;
+
+  Contacts(
+    this.email,
+    this.phone,
+    this.link,
+  );
+}
+
+class Auth {
+  Customer customer;
+  Contacts contacts;
+
+  Auth(
+    this.customer,
+    this.contacts,
+  );
+}

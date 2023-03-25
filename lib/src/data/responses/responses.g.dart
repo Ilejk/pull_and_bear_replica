@@ -163,3 +163,50 @@ Map<String, dynamic> _$HomeResponseToJson(HomeResponse instance) =>
       'message': instance.message,
       'data': instance.data,
     };
+
+CustomerRespose _$CustomerResposeFromJson(Map<String, dynamic> json) =>
+    CustomerRespose(
+      json['id'] as String?,
+      json['name'] as String?,
+      json['numOfNotifications'] as int?,
+    );
+
+Map<String, dynamic> _$CustomerResposeToJson(CustomerRespose instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'numOfNotifications': instance.numOfNotifications,
+    };
+
+ContactResponse _$ContactResponseFromJson(Map<String, dynamic> json) =>
+    ContactResponse(
+      json['email'] as String?,
+      json['phone'] as String?,
+      json['link'] as String?,
+    );
+
+Map<String, dynamic> _$ContactResponseToJson(ContactResponse instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'phone': instance.phone,
+      'link': instance.link,
+    };
+
+AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) => AuthResponse(
+      json['customer'] == null
+          ? null
+          : CustomerRespose.fromJson(json['customer'] as Map<String, dynamic>),
+      json['contacts'] == null
+          ? null
+          : ContactResponse.fromJson(json['contacts'] as Map<String, dynamic>),
+    )
+      ..baseResponseStatus = json['status'] as int?
+      ..message = json['message'] as String?;
+
+Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
+    <String, dynamic>{
+      'status': instance.baseResponseStatus,
+      'message': instance.message,
+      'customer': instance.customer,
+      'contacts': instance.contacts,
+    };

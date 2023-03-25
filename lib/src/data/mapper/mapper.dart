@@ -133,3 +133,29 @@ extension HomeResponseMapper on HomeResponse? {
     return HomeObject(data);
   }
 }
+
+extension AuthResponseMapper on AuthResponse? {
+  Auth toDomain() {
+    return Auth(this!.customer.toDomain(), this!.contacts.toDomain());
+  }
+}
+
+extension CustomerResponseMapper on CustomerRespose? {
+  Customer toDomain() {
+    return Customer(
+      this?.id?.orEmpty() ?? Constants.empty,
+      this?.name?.orEmpty() ?? Constants.empty,
+      this?.numOfNotifications?.orZero() ?? Constants.zero,
+    );
+  }
+}
+
+extension ContactsResponseMapper on ContactResponse? {
+  Contacts toDomain() {
+    return Contacts(
+      this?.email?.orEmpty() ?? Constants.empty,
+      this?.phone?.orEmpty() ?? Constants.empty,
+      this?.link?.orEmpty() ?? Constants.empty,
+    );
+  }
+}

@@ -5,6 +5,7 @@ import 'package:pull_and_bear_replica/src/data/mapper/mapper.dart';
 import 'package:pull_and_bear_replica/src/data/network/error_handler.dart';
 import 'package:pull_and_bear_replica/src/data/network/failure_handler.dart';
 import 'package:pull_and_bear_replica/src/data/network/network_info.dart';
+import 'package:pull_and_bear_replica/src/data/requests/requests.dart';
 import 'package:pull_and_bear_replica/src/domain/model/model.dart';
 import 'package:pull_and_bear_replica/src/domain/repository/repository.dart';
 
@@ -52,6 +53,35 @@ class RepositoryImplementer extends Repository {
           ),
         );
       }
+    }
+  }
+
+  @override
+  Future<Either<Failure, Auth>> login(LoginRequest loginRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final reponse = await _remoteDataSource.login(loginRequest);
+        if (reponse.baseResponseStatus == ApiInternalStatus.success) {
+          return Right(reponse.toDomain());
+        } else {
+          return Left(
+            Failure(
+              code: reponse.baseResponseStatus ?? ApiInternalStatus.failure,
+              message:
+                  reponse.message ?? reponse.message ?? ResponseMessage.unknown,
+            ),
+          );
+        }
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(
+        Failure(
+          code: ResponseCode.noInternetConnection,
+          message: ResponseMessage.noInternetConnection,
+        ),
+      );
     }
   }
 }
