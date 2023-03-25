@@ -20,6 +20,11 @@ class StringsManager {
   static const String pAbCommunity = '#PULLANDBEARCOMMUNITY';
   static const String pAbCommunityInfo =
       'Get inspired and share your Pull&Bear looks using\nthe #pullandbearcommunity hashtag and tag us at @pullandbear';
+  static const String join = 'JOIN!';
+  static const String newsLetterText1 =
+      'THE PERFECT COMBO:\nON TREND AND WITCH A 10%\nDISCOUNT';
+  static const String newsLetterText2 = 'SUBSCRIBE TO OUR NEWSLETTER';
+  static const String imIn = 'I\'M IN';
 }
 
 class StringsErrorManager {

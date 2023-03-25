@@ -30,16 +30,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: StreamBuilder<FlowState>(
-        stream: _viewModel.outputState,
-        builder: (context, snapshot) {
-          return snapshot.data?.getScreenWidget(context, _getContentWidget(),
-                  () {
-                _viewModel.start();
-              }) ??
-              Container();
-        },
+    return Center(
+      child: SingleChildScrollView(
+        child: StreamBuilder<FlowState>(
+          stream: _viewModel.outputState,
+          builder: (context, snapshot) {
+            return snapshot.data?.getScreenWidget(context, _getContentWidget(),
+                    () {
+                  _viewModel.start();
+                }) ??
+                Container();
+          },
+        ),
       ),
     );
   }
@@ -62,6 +64,8 @@ class _HomePageState extends State<HomePage> {
             _getFanCornerSpacerWidget(),
             _getCommunityInfoSpacerWidget(),
             _getCommunityWidget(snapshot.data?.community),
+            _getCommunityJoinButton(),
+            _getNewsLetterWidget(),
           ],
         );
       },
@@ -100,13 +104,19 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Center(
-              child: Text(
-                StringsManager.shop,
-                style: TextStyle(
-                  color: ColorManager.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: FontSize.s16,
-                  decoration: TextDecoration.underline,
+              child: InkWell(
+                onTap: () {
+                  print('shop');
+                  //TODO: implement on tap
+                },
+                child: Text(
+                  StringsManager.shop,
+                  style: TextStyle(
+                    color: ColorManager.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: FontSize.s16,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
             ),
@@ -129,10 +139,11 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               StringsManager.pAbCommunity,
               style: TextStyle(
-                  color: ColorManager.white,
-                  fontWeight: FontWeight.w900,
-                  fontSize: FontSize.s20,
-                  letterSpacing: 1.5),
+                color: ColorManager.white,
+                fontWeight: FontWeight.w900,
+                fontSize: FontSize.s20,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
           Padding(
@@ -148,12 +159,109 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(
                   color: ColorManager.white,
                   fontWeight: FontWeight.w900,
-                  fontSize: FontSize.s10,
+                  fontSize: FontSize.s11,
                 ),
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _getCommunityJoinButton() {
+    return Container(
+      height: SizeManager.s80,
+      width: double.infinity,
+      color: ColorManager.black,
+      child: InkWell(
+        onTap: () {
+          print('join');
+          //TODO: implement on tap
+        },
+        child: Center(
+          child: Container(
+            height: SizeManager.s40,
+            width: SizeManager.s180,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(SizeManager.s5),
+              color: ColorManager.black,
+              border: Border.all(
+                color: ColorManager.white,
+                width: SizeManager.s0_7,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                StringsManager.join,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _getNewsLetterWidget() {
+    return Padding(
+      padding: const EdgeInsets.only(top: PaddingManager.p18),
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s400,
+        color: ColorManager.lightGreen,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              StringsManager.newsLetterText1,
+              style: TextStyle(
+                color: ColorManager.black,
+                fontSize: FontSize.s27,
+                fontWeight: FontWeight.w800,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              StringsManager.newsLetterText2,
+              style: TextStyle(
+                color: ColorManager.black,
+                fontSize: FontSize.s18,
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            InkWell(
+              onTap: () {
+                print('im in');
+                //TODO: implement on tap
+              },
+              child: Center(
+                child: Container(
+                  height: SizeManager.s40,
+                  width: SizeManager.s180,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(SizeManager.s5),
+                    color: ColorManager.black,
+                    border: Border.all(
+                      color: ColorManager.black,
+                      width: SizeManager.s0_7,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      StringsManager.imIn,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -322,10 +430,12 @@ class _HomePageState extends State<HomePage> {
           height: SizeManager.s500,
           child: CarouselSlider(
             items: fanCorner
-                .map((fanCorner) => Image.network(
-                      fanCorner.image,
-                      fit: BoxFit.cover,
-                    ))
+                .map(
+                  (fanCorner) => Image.network(
+                    fanCorner.image,
+                    fit: BoxFit.cover,
+                  ),
+                )
                 .toList(),
             options: CarouselOptions(
               height: SizeManager.s500,
@@ -344,47 +454,42 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getCommunityWidget(List<Community>? community) {
     if (community != null) {
-      return Padding(
-        padding: const EdgeInsets.only(
-          bottom: PaddingManager.p18,
-        ),
-        child: Container(
-          width: double.infinity,
-          height: SizeManager.s450,
-          color: ColorManager.black,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: community
-                .map((community) => SizedBox(
-                      height: SizeManager.s350,
-                      width: SizeManager.s250,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          left: PaddingManager.p2,
-                          right: PaddingManager.p2,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.network(
-                              community.image,
-                              fit: BoxFit.cover,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: PaddingManager.p8),
-                              child: Text(
-                                community.title,
-                                style: Theme.of(context).textTheme.headline5,
-                              ),
-                            )
-                          ],
-                        ),
+      return Container(
+        width: double.infinity,
+        height: SizeManager.s450,
+        color: ColorManager.black,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: community
+              .map((community) => SizedBox(
+                    height: SizeManager.s350,
+                    width: SizeManager.s250,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: PaddingManager.p2,
+                        right: PaddingManager.p2,
                       ),
-                    ))
-                .toList(),
-          ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.network(
+                            community.image,
+                            fit: BoxFit.cover,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(top: PaddingManager.p8),
+                            child: Text(
+                              community.title,
+                              style: Theme.of(context).textTheme.headline5,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ))
+              .toList(),
         ),
       );
     } else {
