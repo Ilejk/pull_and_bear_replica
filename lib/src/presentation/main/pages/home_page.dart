@@ -232,9 +232,13 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: community
-                .map((community) => Image.network(
-                      community.image,
-                      fit: BoxFit.cover,
+                .map((community) => Container(
+                      height: 200,
+                      width: double.infinity,
+                      child: Image.network(
+                        community.image,
+                        fit: BoxFit.cover,
+                      ),
                     ))
                 .toList(),
           ),
@@ -243,5 +247,11 @@ class _HomePageState extends State<HomePage> {
     } else {
       return Container();
     }
+  }
+
+  @override
+  void dispose() {
+    _viewModel.dispose();
+    super.dispose();
   }
 }

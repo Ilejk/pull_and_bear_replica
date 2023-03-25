@@ -12,8 +12,12 @@ class RepositoryImplementer extends Repository {
   final RemoteDataSource _remoteDataSource;
   final NetworkInfo _networkInfo;
   final LocalDataSource _localDataSource;
+
   RepositoryImplementer(
-      this._remoteDataSource, this._networkInfo, this._localDataSource);
+    this._remoteDataSource,
+    this._networkInfo,
+    this._localDataSource,
+  );
 
   @override
   Future<Either<Failure, HomeObject>> getHome() async {

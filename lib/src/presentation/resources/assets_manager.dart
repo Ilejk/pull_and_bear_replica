@@ -6,9 +6,9 @@ class ImageManager {
 }
 
 class JsonAssetsManager {
-  static const String loading = '';
-  static const String success = '';
-  static const String error = '';
-  static const String empty = '';
+  static const String loading = '$animationPath/loading.json';
+  static const String error = '$animationPath/error.json';
+  static const String empty = '$animationPath/empty.json';
+  static const String success = '$animationPath/success.json';
   //TODO: add animations
 }
