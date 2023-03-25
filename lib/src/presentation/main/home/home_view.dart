@@ -17,6 +17,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  bool get isMyAccount => _currentIndex == 4;
+  bool get isBasket => _currentIndex == 3;
+  bool get isMenu => _currentIndex == 2;
+  bool get isSearch => _currentIndex == 1;
+  bool get isHome => _currentIndex == 0;
+
   List<Widget> pages = const [
     HomePage(),
     SearchPage(),
@@ -24,6 +30,7 @@ class _HomeViewState extends State<HomeView> {
     BasketPage(),
     MyProfilePage(),
   ];
+
   List<String> titles = const [
     StringsManager.home,
     StringsManager.search,
@@ -39,14 +46,11 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorManager.white,
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
+  AppBar appBar() {
+    if (isHome) {
+      return AppBar(
         backgroundColor: Colors.transparent,
-        scrolledUnderElevation: 50,
+        scrolledUnderElevation: SizeManager.s50,
         automaticallyImplyLeading: false,
         elevation: SizeManager.s0,
         title: Text(
@@ -58,7 +62,91 @@ class _HomeViewState extends State<HomeView> {
             color: ColorManager.white,
           ),
         ),
-      ),
+      );
+    } else if (isSearch) {
+      return AppBar(
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: SizeManager.s50,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s0,
+        title: Text(
+          StringsManager.pullAndBearTitle,
+          style: TextStyle(
+            fontSize: FontSize.s25,
+            fontWeight: FontWeight.bold,
+            letterSpacing: SizeManager.s3,
+            color: ColorManager.white,
+          ),
+        ),
+      );
+      //TODO: APPBAR SEARCH
+    } else if (isMenu) {
+      return AppBar(
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: SizeManager.s50,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s0,
+        title: Text(
+          StringsManager.pullAndBearTitle,
+          style: TextStyle(
+            fontSize: FontSize.s25,
+            fontWeight: FontWeight.bold,
+            letterSpacing: SizeManager.s3,
+            color: ColorManager.white,
+          ),
+        ),
+      );
+      //TODO: APPBAR MENU
+    } else if (isBasket) {
+      return AppBar(
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: SizeManager.s50,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s0,
+        title: Text(
+          StringsManager.pullAndBearTitle,
+          style: TextStyle(
+            fontSize: FontSize.s25,
+            fontWeight: FontWeight.bold,
+            letterSpacing: SizeManager.s3,
+            color: ColorManager.white,
+          ),
+        ),
+      );
+      //TODO APPBAR BASKET
+    } else if (isMyAccount) {
+      return AppBar(
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: SizeManager.s50,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s0,
+        title: Text(
+          StringsManager.pullAndBearTitle,
+          style: TextStyle(
+            fontSize: FontSize.s25,
+            fontWeight: FontWeight.bold,
+            letterSpacing: SizeManager.s3,
+            color: ColorManager.white,
+          ),
+        ),
+      );
+      //TODO APPBAR MY ACCOUNT
+    } else {
+      return AppBar(
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: SizeManager.s50,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s0,
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: ColorManager.white,
+      extendBodyBehindAppBar: true,
+      appBar: appBar(),
       body: pages[_currentIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(boxShadow: [
@@ -69,9 +157,9 @@ class _HomeViewState extends State<HomeView> {
         ]),
         child: BottomNavigationBar(
           showUnselectedLabels: true,
-          iconSize: 26,
-          unselectedFontSize: 13,
-          selectedFontSize: 13,
+          iconSize: SizeManager.s26,
+          unselectedFontSize: FontSize.s13,
+          selectedFontSize: FontSize.s13,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: ColorManager.black,
           unselectedItemColor: ColorManager.grey,
