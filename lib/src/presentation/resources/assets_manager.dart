@@ -3,6 +3,8 @@ const String animationPath = 'assets/json';
 
 class ImageManager {
   static const String splashLogo = '$imagePath/pull_and_bear_logo_splash.jpg';
+  static const String fbLogo = '$imagePath/fb.png';
+  static const String appleLogo = '$imagePath/apple.png';
 }
 
 class JsonAssetsManager {

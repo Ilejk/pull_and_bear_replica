@@ -11,6 +11,8 @@ class ColorManager {
   static Color black = HexColor.fromHex('#000000');
   static Color black54 = Colors.black54;
   static Color lightGreen = Colors.lightGreen.shade200;
+  static Color green = Colors.green.shade500;
+  static Color veryLighGrey = Colors.grey.shade200;
 }
 
 extension HexColor on Color {

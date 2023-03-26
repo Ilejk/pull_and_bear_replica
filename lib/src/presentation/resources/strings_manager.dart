@@ -27,9 +27,20 @@ class StringsManager {
   static const String imIn = 'I\'M IN';
   static const String logInOrRegisterTitle = 'LOG IN/REGISTER';
   static const String username = 'Username';
-  static const String usernameError = 'Invalid username';
+  static const String emailOrTelephoneError = 'Invalid Input';
   static const String password = 'password';
   static const String passwordError = 'Invalid password';
+  static const String next = 'Next';
+  static const String emailOrTelephone = 'Email / Telephone';
+  static const String enterPhoneNumberOrEmail =
+      'ENTER YOUR TELEPHONE\nNUMBER OR EMAIL';
+  static const String orIfYou = 'Or, if you prefer';
+  static const String cntWithApple = 'Contineu with Apple';
+  static const String cntWtihFb = 'Contineu with Facebook';
+  static const String privacyPolicyText1 =
+      'By loggin/sigining inwith my social logian, I agree to connect my account\nin accordance with the Privacy Policy.';
+  static const String privacyPolicyText2 =
+      'We will use the phone number/email address provided to send the\nverification code.';
 }
 
 class StringsErrorManager {

@@ -7,9 +7,9 @@ import 'package:pull_and_bear_replica/src/presentation/resources/values_manager.
 ThemeData getApplicationTheme() {
   return ThemeData(
     primaryColor: ColorManager.black,
-    primaryColorLight: ColorManager.lightGrey,
+    primaryColorLight: ColorManager.black,
     primaryColorDark: ColorManager.black54,
-    disabledColor: ColorManager.grey1,
+    disabledColor: ColorManager.lightGrey,
     splashColor: ColorManager.black54,
     colorScheme:
         ColorScheme.fromSwatch().copyWith(secondary: ColorManager.grey),
@@ -36,8 +36,11 @@ ThemeData getApplicationTheme() {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        textStyle: getRegularTextStyle(
+        disabledBackgroundColor: ColorManager.black,
+        disabledForegroundColor: ColorManager.white,
+        textStyle: getBoldTextStyle(
           color: ColorManager.white,
+          fontSize: FontSize.s16,
         ),
         backgroundColor: ColorManager.black,
         shape: RoundedRectangleBorder(
@@ -118,7 +121,7 @@ ThemeData getApplicationTheme() {
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.black,
+          color: ColorManager.green,
           width: SizeManager.s1_5,
         ),
         borderRadius: BorderRadius.circular(
@@ -136,7 +139,7 @@ ThemeData getApplicationTheme() {
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.black,
+          color: ColorManager.error,
           width: SizeManager.s1_5,
         ),
         borderRadius: BorderRadius.circular(
