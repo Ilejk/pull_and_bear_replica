@@ -6,4 +6,5 @@ import 'package:pull_and_bear_replica/src/domain/model/model.dart';
 abstract class Repository {
   Future<Either<Failure, HomeObject>> getHome();
   Future<Either<Failure, Auth>> login(LoginRequest loginRequest);
+  Future<Either<Failure, Auth>> register(RegisterRequest registerRequest);
 }

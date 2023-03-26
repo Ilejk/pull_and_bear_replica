@@ -149,7 +149,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   ),
                 ),
                 const SizedBox(
-                  height: SizeManager.s40,
+                  height: SizeManager.s20,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -205,6 +205,29 @@ class _MyProfilePageState extends State<MyProfilePage> {
                         ),
                       );
                     },
+                  ),
+                ),
+                const SizedBox(
+                  height: SizeManager.s20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: PaddingManager.p28),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(Routes.registerRoute);
+                      },
+                      child: Text(
+                        StringsManager.newAcc,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontSize: FontSize.s12,
+                          fontFamily: FontConstants.fontFamily,
+                        ),
+                        textAlign: TextAlign.end,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -280,7 +303,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   ),
                 ),
                 const SizedBox(
-                  height: SizeManager.s40,
+                  height: SizeManager.s20,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(

@@ -5,6 +5,7 @@ import 'package:pull_and_bear_replica/src/data/responses/responses.dart';
 abstract class RemoteDataSource {
   Future<HomeResponse> getHome();
   Future<AuthResponse> login(LoginRequest loginRequest);
+  Future<AuthResponse> register(RegisterRequest registerRequest);
 }
 
 class RemoteDataSourceClassImplementer implements RemoteDataSource {
@@ -21,6 +22,16 @@ class RemoteDataSourceClassImplementer implements RemoteDataSource {
     return await _appServiceClient.login(
       loginRequest.email,
       loginRequest.password,
+    );
+  }
+
+  @override
+  Future<AuthResponse> register(RegisterRequest registerRequest) async {
+    return await _appServiceClient.register(
+      registerRequest.userName,
+      registerRequest.email,
+      registerRequest.password,
+      registerRequest.mobileNumber,
     );
   }
 }

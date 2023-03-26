@@ -12,8 +12,10 @@ import 'package:pull_and_bear_replica/src/data/repository/repository_implementer
 import 'package:pull_and_bear_replica/src/domain/repository/repository.dart';
 import 'package:pull_and_bear_replica/src/domain/use_case/home_use_case.dart';
 import 'package:pull_and_bear_replica/src/domain/use_case/login_use_case.dart';
+import 'package:pull_and_bear_replica/src/domain/use_case/register_use_case.dart';
 import 'package:pull_and_bear_replica/src/presentation/login/login_view_model.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/home/home_view_model.dart';
+import 'package:pull_and_bear_replica/src/presentation/register/register_view_model.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -49,5 +51,14 @@ initLoginModule() {
   if (!GetIt.I.isRegistered<LoginUseCase>()) {
     instance.registerFactory<LoginUseCase>(() => LoginUseCase(instance()));
     instance.registerFactory<LoginViewModel>(() => LoginViewModel(instance()));
+  }
+}
+
+initRegisterdModule() {
+  if (!GetIt.I.isRegistered<RegisterUseCase>()) {
+    instance
+        .registerFactory<RegisterUseCase>(() => RegisterUseCase(instance()));
+    instance.registerFactory<RegisterViewModel>(
+        () => RegisterViewModel(instance()));
   }
 }

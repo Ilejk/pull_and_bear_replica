@@ -42,6 +42,13 @@ class StringsManager {
   static const String privacyPolicyText2 =
       'We will use the phone number/email address provided to send the\nverification code.';
   static const String myAccount = 'My Account';
+  static const String newAcc = 'Don\'t have an account ?';
+  static const String invalidEmail = 'Email is invalid';
+  static const String invalidPassword = 'Password is invalid';
+  static const String invalidNumber = 'Number is invalid';
+  static const String invalidUsername = 'Username is invalid';
+  static const String emailHint = 'Email';
+  static const String mobileNumber = 'Mobile Number';
 }
 
 class StringsErrorManager {

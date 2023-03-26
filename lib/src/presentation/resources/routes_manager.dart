@@ -27,6 +27,7 @@ class RouteGenerator {
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const MyProfilePage());
       case Routes.registerRoute:
+        initRegisterdModule();
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case Routes.mainRoute:
         initHomeModule();
