@@ -89,8 +89,336 @@ class _MyProfilePageState extends State<MyProfilePage> {
     }
   }
 
-  Widget _getMyProfileContentWidget() => Container();
-  //TODO: create my profile widget
+  Widget _getMyProfileContentWidget() {
+    return SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          InkWell(
+            onTap: () {
+              //TODO IMPLEMT EDIT
+            },
+            child: Container(
+              width: double.infinity,
+              height: SizeManager.s65,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: ColorManager.lightGrey,
+                    width: SizeManager.s0_5,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: SizeManager.s24,
+                      width: SizeManager.s24,
+                      child: Image.asset(ImageManager.myPurchases),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: PaddingManager.p20),
+                      child: Text(
+                        StringsManager.myPurchases,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontFamily: FontConstants.fontFamily,
+                          fontSize: FontSize.s20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Icon(
+                      Icons.keyboard_arrow_right_sharp,
+                      size: FontSize.s20,
+                      color: ColorManager.grey,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              //TODO IMPLEMT EDIT
+            },
+            child: Container(
+              width: double.infinity,
+              height: SizeManager.s65,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: ColorManager.lightGrey,
+                    width: SizeManager.s0_5,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: SizeManager.s24,
+                      width: SizeManager.s24,
+                      child: Image.asset(ImageManager.returns),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: PaddingManager.p20),
+                      child: Text(
+                        StringsManager.returns,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontFamily: FontConstants.fontFamily,
+                          fontSize: FontSize.s20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Icon(
+                      Icons.keyboard_arrow_right_sharp,
+                      size: FontSize.s20,
+                      color: ColorManager.grey,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              //TODO IMPLEMT EDIT
+            },
+            child: Container(
+              width: double.infinity,
+              height: SizeManager.s65,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: ColorManager.lightGrey,
+                    width: SizeManager.s0_5,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: SizeManager.s24,
+                      width: SizeManager.s24,
+                      child: Image.asset(ImageManager.urDetails),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: PaddingManager.p20),
+                      child: Text(
+                        StringsManager.urDetails,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontFamily: FontConstants.fontFamily,
+                          fontSize: FontSize.s20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Text(
+                      StringsManager.edit,
+                      style: TextStyle(
+                        color: ColorManager.green,
+                        fontFamily: FontConstants.fontFamily,
+                        fontSize: FontSize.s18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              //TODO IMPLEMT EDIT
+            },
+            child: Container(
+              width: double.infinity,
+              height: SizeManager.s65,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: ColorManager.lightGrey,
+                    width: SizeManager.s0_5,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: SizeManager.s24,
+                      width: SizeManager.s24,
+                      child: Image.asset(ImageManager.addressBook),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: PaddingManager.p20),
+                      child: Text(
+                        StringsManager.addressBook,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontFamily: FontConstants.fontFamily,
+                          fontSize: FontSize.s20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Text(
+                      StringsManager.edit,
+                      style: TextStyle(
+                        color: ColorManager.green,
+                        fontFamily: FontConstants.fontFamily,
+                        fontSize: FontSize.s18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              //TODO IMPLEMT EDIT
+            },
+            child: Container(
+              width: double.infinity,
+              height: SizeManager.s65,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: ColorManager.lightGrey,
+                    width: SizeManager.s0_5,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: SizeManager.s24,
+                      width: SizeManager.s24,
+                      child: Image.asset(ImageManager.newsletter),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: PaddingManager.p20),
+                      child: Text(
+                        StringsManager.newsletter,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontFamily: FontConstants.fontFamily,
+                          fontSize: FontSize.s20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Icon(
+                      Icons.keyboard_arrow_right_sharp,
+                      size: FontSize.s20,
+                      color: ColorManager.grey,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              //TODO IMPLEMT EDIT
+            },
+            child: Container(
+              width: double.infinity,
+              height: SizeManager.s65,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: ColorManager.lightGrey,
+                    width: SizeManager.s0_5,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: PaddingManager.p28,
+                  right: PaddingManager.p28,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: SizeManager.s24,
+                      width: SizeManager.s24,
+                      child: Image.asset(ImageManager.customerService),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: PaddingManager.p20),
+                      child: Text(
+                        StringsManager.customerService,
+                        style: TextStyle(
+                          color: ColorManager.black,
+                          fontFamily: FontConstants.fontFamily,
+                          fontSize: FontSize.s20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Icon(
+                      Icons.keyboard_arrow_right_sharp,
+                      size: FontSize.s20,
+                      color: ColorManager.grey,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _getLoginContentWidget() {
     return SafeArea(

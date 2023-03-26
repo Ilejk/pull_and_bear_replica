@@ -49,6 +49,13 @@ class StringsManager {
   static const String invalidUsername = 'Username is invalid';
   static const String emailHint = 'Email';
   static const String mobileNumber = 'Mobile Number';
+  static const String myPurchases = 'My purchases';
+  static const String returns = 'Returns';
+  static const String urDetails = 'Your details';
+  static const String addressBook = 'My address book';
+  static const String newsletter = 'Newsletter';
+  static const String customerService = 'Customer service';
+  static const String edit = 'Edit';
 }
 
 class StringsErrorManager {

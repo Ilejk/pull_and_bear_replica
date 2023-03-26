@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pull_and_bear_replica/src/app/app_preferences.dart';
 import 'package:pull_and_bear_replica/src/app/directory_implementer.dart';
+import 'package:pull_and_bear_replica/src/data/data_source/local_data_source.dart';
 import 'package:pull_and_bear_replica/src/presentation/login/login_view_model.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/basket_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/home_page.dart';
@@ -9,6 +10,7 @@ import 'package:pull_and_bear_replica/src/presentation/main/pages/search_page.da
 import 'package:pull_and_bear_replica/src/presentation/main/pages/menu_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/colors_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/font_manager.dart';
+import 'package:pull_and_bear_replica/src/presentation/resources/routes_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/values_manager.dart';
 
@@ -21,6 +23,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final AppPreferences _appPreferences = instance<AppPreferences>();
+  final LocalDataSource _localDataSource = instance<LocalDataSource>();
   bool get isMyAccount => _currentIndex == 4;
   bool get isBasket => _currentIndex == 3;
   bool get isMenu => _currentIndex == 2;
@@ -59,6 +62,16 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       _currentIndex = index;
     });
+  }
+
+  void _changeLanguage() {
+    //TODO
+  }
+
+  void _logout() {
+    _appPreferences.logout();
+    _localDataSource.clearCache();
+    Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
   }
 
   AppBar appBar() {
@@ -163,6 +176,29 @@ class _HomeViewState extends State<HomeView> {
       );
     } else if (isMyAccount && isLoggedIn) {
       return AppBar(
+        centerTitle: false,
+        actions: [
+          IconButton(
+            onPressed: () {
+              _changeLanguage();
+            },
+            icon: Icon(
+              Icons.language_sharp,
+              size: SizeManager.s24,
+              color: ColorManager.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              _logout();
+            },
+            icon: Icon(
+              Icons.logout_sharp,
+              size: SizeManager.s24,
+              color: ColorManager.black,
+            ),
+          ),
+        ],
         shape: Border(
           bottom: BorderSide(
             color: ColorManager.black,
