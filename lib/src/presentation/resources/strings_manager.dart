@@ -28,8 +28,8 @@ class StringsManager {
   static const String logInOrRegisterTitle = 'LOG IN/REGISTER';
   static const String username = 'Username';
   static const String emailOrTelephoneError = 'Invalid Input';
-  static const String password = 'password';
-  static const String passwordError = 'Invalid password';
+  static const String password = 'Password';
+  static const String passwordError = 'Invalid Input';
   static const String next = 'Next';
   static const String emailOrTelephone = 'Email / Telephone';
   static const String enterPhoneNumberOrEmail =
@@ -41,6 +41,7 @@ class StringsManager {
       'By loggin/sigining inwith my social logian, I agree to connect my account\nin accordance with the Privacy Policy.';
   static const String privacyPolicyText2 =
       'We will use the phone number/email address provided to send the\nverification code.';
+  static const String myAccount = 'My Account';
 }
 
 class StringsErrorManager {

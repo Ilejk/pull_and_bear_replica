@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pull_and_bear_replica/src/app/app_preferences.dart';
+import 'package:pull_and_bear_replica/src/app/directory_implementer.dart';
+import 'package:pull_and_bear_replica/src/presentation/login/login_view_model.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/basket_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/home_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/my_profile_page.dart';
@@ -17,11 +20,23 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final AppPreferences _appPreferences = instance<AppPreferences>();
   bool get isMyAccount => _currentIndex == 4;
   bool get isBasket => _currentIndex == 3;
   bool get isMenu => _currentIndex == 2;
   bool get isSearch => _currentIndex == 1;
   bool get isHome => _currentIndex == 0;
+
+  bool isLoggedIn = false;
+  Future<void> _isUserLoggedInCheck() async {
+    _appPreferences.isUserLoggedIn().then((isUserLoggedIn) {
+      if (isUserLoggedIn) {
+        isLoggedIn = true;
+      } else {
+        isLoggedIn = false;
+      }
+    });
+  }
 
   List<Widget> pages = const [
     HomePage(),
@@ -119,7 +134,7 @@ class _HomeViewState extends State<HomeView> {
         ),
       );
       //TODO APPBAR BASKET
-    } else if (isMyAccount) {
+    } else if (isMyAccount && !isLoggedIn) {
       return AppBar(
         shape: Border(
           bottom: BorderSide(
@@ -146,6 +161,28 @@ class _HomeViewState extends State<HomeView> {
           ),
         ),
       );
+    } else if (isMyAccount && isLoggedIn) {
+      return AppBar(
+        shape: Border(
+          bottom: BorderSide(
+            color: ColorManager.black,
+            width: SizeManager.s0_5,
+          ),
+        ),
+        backgroundColor: ColorManager.white,
+        scrolledUnderElevation: SizeManager.s50,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s0,
+        title: Text(
+          StringsManager.myAccount,
+          style: TextStyle(
+            fontSize: FontSize.s20,
+            fontWeight: FontWeight.bold,
+            letterSpacing: SizeManager.s3,
+            color: ColorManager.black,
+          ),
+        ),
+      );
     } else {
       return AppBar(
         backgroundColor: Colors.transparent,
@@ -154,6 +191,12 @@ class _HomeViewState extends State<HomeView> {
         elevation: SizeManager.s0,
       );
     }
+  }
+
+  @override
+  void initState() {
+    _isUserLoggedInCheck();
+    super.initState();
   }
 
   @override

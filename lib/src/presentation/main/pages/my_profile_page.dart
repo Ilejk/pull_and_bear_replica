@@ -23,6 +23,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
   final AppPreferences _appPreferences = instance<AppPreferences>();
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
 
   _bind() {
@@ -156,6 +157,37 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     right: PaddingManager.p28,
                   ),
                   child: StreamBuilder<bool>(
+                    stream: _viewModel.outputIsPasswordValid,
+                    builder: (context, snapshot) {
+                      return TextFormField(
+                        controller: _passwordController,
+                        keyboardType: TextInputType.visiblePassword,
+                        decoration: InputDecoration(
+                          hintText: StringsManager.password,
+                          hintStyle: TextStyle(
+                            fontFamily: FontConstants.fontFamily,
+                            color: ColorManager.lightGrey,
+                            fontSize: FontSize.s14,
+                            letterSpacing: SizeManager.s1,
+                          ),
+                          labelText: StringsManager.password,
+                          errorText: (snapshot.data ?? true)
+                              ? null
+                              : StringsManager.passwordError,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: SizeManager.s40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: PaddingManager.p28,
+                    right: PaddingManager.p28,
+                  ),
+                  child: StreamBuilder<bool>(
                     stream: _viewModel.outputIsUserNameValid,
                     builder: (context, snapshot) {
                       return SizedBox(
@@ -164,9 +196,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                         child: ElevatedButton(
                           onPressed: (snapshot.data ?? false)
                               ? () {
-                                  Navigator.of(context).pushNamed(
-                                    Routes.loginRoute,
-                                  );
+                                  _viewModel.login();
                                 }
                               : null,
                           child: const Text(
