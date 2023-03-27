@@ -5,6 +5,8 @@ import 'package:pull_and_bear_replica/src/data/responses/responses.dart';
 abstract class LocalDataSource {
   Future<HomeResponse> getHome();
   Future<void> saveHomeToCache(HomeResponse homeResponse);
+  Future<MenuResponse> getMenu();
+  Future<void> saveMenuToCache(MenuResponse menuResponse);
   void clearCache();
   void removeFromCache(String key);
 }
@@ -36,6 +38,22 @@ class LocalDataSourceImplementer implements LocalDataSource {
   @override
   Future<void> saveHomeToCache(HomeResponse homeResponse) async {
     cacheMap[Constants.cacheHomeKey] = CachedItem(homeResponse);
+  }
+
+  @override
+  Future<MenuResponse> getMenu() async {
+    CachedItem? cachedItem = cacheMap[Constants.cacheMenuKey];
+
+    if (cachedItem != null && cachedItem.isValid(Constants.cacheMenuInterval)) {
+      return cachedItem.data;
+    } else {
+      throw ErrorHandler.handle(DataSource.cacheError);
+    }
+  }
+
+  @override
+  Future<void> saveMenuToCache(MenuResponse menuResponse) async {
+    cacheMap[Constants.cacheMenuKey] = CachedItem(menuResponse);
   }
 }
 

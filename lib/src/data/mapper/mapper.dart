@@ -159,3 +159,437 @@ extension ContactsResponseMapper on ContactResponse? {
     );
   }
 }
+
+extension NewManMenuResponseMapper on NewManMenuResponse? {
+  NewMan toDomain() {
+    return NewMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension MidSeasonManMenuResponseMapper on MidSeasonManMenuResponse? {
+  MidSeasonMan toDomain() {
+    return MidSeasonMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension ClothingManMenuResponseMapper on ClothingManMenuResponse? {
+  ClothingMan toDomain() {
+    return ClothingMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension SwimWearManMenuResponseMapper on SwimWearManMenuResponse? {
+  SwimWearMan toDomain() {
+    return SwimWearMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension JeansManMenuResponseMapper on JeansManMenuResponse? {
+  JeansMan toDomain() {
+    return JeansMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension ShoesManMenuResponseMapper on ShoesManMenuResponse? {
+  ShoesMan toDomain() {
+    return ShoesMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension AccessoriesManMenuResponseMapper on AccessoriesManMenuResponse? {
+  AccessoriesMan toDomain() {
+    return AccessoriesMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension BagsManMenuResponseMapper on BagsManMenuResponse? {
+  BagsMan toDomain() {
+    return BagsMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension LicensedManMenuResponseMapper on LicensedManMenuResponse? {
+  LicensedMan toDomain() {
+    return LicensedMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension StwdManMenuResponseMapper on StwdManMenuResponse? {
+  StwdMan toDomain() {
+    return StwdMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension BasicsManMenuResponseMapper on BasicsManMenuResponse? {
+  BasicsMan toDomain() {
+    return BasicsMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension UnisexManMenuResponseMapper on UnisexManMenuResponse? {
+  UnisexMan toDomain() {
+    return UnisexMan(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension NewWomanMenuResponseMapper on NewWomanMenuResponse? {
+  NewWoman toDomain() {
+    return NewWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension MidSeasonWomanMenuResponseMapper on MidSeasonWomanMenuResponse? {
+  MidSeasonWoman toDomain() {
+    return MidSeasonWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension ClothingWomanMenuResponseMapper on ClothingWomanMenuResponse? {
+  ClothingWoman toDomain() {
+    return ClothingWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension BikinisWomanMenuResponseMapper on BikinsWomanMenuResponse? {
+  BikinisWoman toDomain() {
+    return BikinisWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension DenimWomanMenuResponseMapper on DenimWomanMenuResponse? {
+  DenimWoman toDomain() {
+    return DenimWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension ShoesWomanMenuResponseMapper on ShoesWomanMenuResponse? {
+  ShoesWoman toDomain() {
+    return ShoesWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension BagsWomanMenuResponseMapper on BagsWomanMenuResponse? {
+  BagsWoman toDomain() {
+    return BagsWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension AccessoriesWomanMenuResponseMapper on AccessoriesWomanMenuResponse? {
+  AccessoriesWoman toDomain() {
+    return AccessoriesWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension EqualsWomanMenuResponseMapper on EqualsWomanMenuResponse? {
+  EqualsWoman toDomain() {
+    return EqualsWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension ExclusiveWomanMenuResponseMapper on ExclusiveWomanMenuResponse? {
+  ExclusiveWoman toDomain() {
+    return ExclusiveWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension PacificWomanMenuResponseMapper on PacificWomanMenuResponse? {
+  PacificWoman toDomain() {
+    return PacificWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension UnisexWomanMenuResponseMapper on UnisexWomanMenuResponse? {
+  UnisexWoman toDomain() {
+    return UnisexWoman(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension MenuResponseMapper on MenuResponse? {
+  MenuObject toDomain() {
+    List<NewMan> mappedNewMan =
+        (this?.data?.newMan?.map((mappedNewMan) => mappedNewMan.toDomain()) ??
+                const Iterable.empty())
+            .cast<NewMan>()
+            .toList();
+    List<MidSeasonMan> mappedMidSeasonMan = (this
+                ?.data
+                ?.midseasonMan
+                ?.map((mappedMidSeasonMan) => mappedMidSeasonMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<MidSeasonMan>()
+        .toList();
+    List<ClothingMan> mappedClothingMan = (this
+                ?.data
+                ?.clothingMan
+                ?.map((mappedClothingMan) => mappedClothingMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<ClothingMan>()
+        .toList();
+    List<SwimWearMan> mappedSwimWearMan = (this
+                ?.data
+                ?.swinwearMan
+                ?.map((mappedSwimWearMan) => mappedSwimWearMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<SwimWearMan>()
+        .toList();
+    List<JeansMan> mappedJeansMan = (this
+                ?.data
+                ?.jeansMan
+                ?.map((mappedJeansMan) => mappedJeansMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<JeansMan>()
+        .toList();
+    List<ShoesMan> mappedShoesMan = (this
+                ?.data
+                ?.shoesMan
+                ?.map((mappedShoesMan) => mappedShoesMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<ShoesMan>()
+        .toList();
+    List<AccessoriesMan> mappedAccessoriesMan = (this
+                ?.data
+                ?.accessoriesMan
+                ?.map((mappedAccessoriesMan) =>
+                    mappedAccessoriesMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<AccessoriesMan>()
+        .toList();
+    List<BagsMan> mappedBagsMan = (this
+                ?.data
+                ?.bagsMan
+                ?.map((mappedBagsMan) => mappedBagsMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<BagsMan>()
+        .toList();
+    List<LicensedMan> mappedLicensedMan = (this
+                ?.data
+                ?.licensedMan
+                ?.map((mappedLicensedMan) => mappedLicensedMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<LicensedMan>()
+        .toList();
+    List<StwdMan> mappedStwdMan = (this
+                ?.data
+                ?.stwdMan
+                ?.map((mappedStwdMan) => mappedStwdMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<StwdMan>()
+        .toList();
+    List<BasicsMan> mappedBasicsMan = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedBasicsMan) => mappedBasicsMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<BasicsMan>()
+        .toList();
+    List<UnisexMan> mappedUnisexMan = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedUnisexMan) => mappedUnisexMan.toDomain()) ??
+            const Iterable.empty())
+        .cast<UnisexMan>()
+        .toList();
+
+    List<NewWoman> mappedNewWoman = (this
+                ?.data
+                ?.newWoman
+                ?.map((mappedNewWoman) => mappedNewWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<NewWoman>()
+        .toList();
+    List<MidSeasonWoman> mappedMidSeasonWoman = (this?.data?.newMan?.map(
+                (mappedMidSeasonWoman) => mappedMidSeasonWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<MidSeasonWoman>()
+        .toList();
+    List<ClothingWoman> mappedClothingWoman = (this?.data?.newMan?.map(
+                (mappedClothingWoman) => mappedClothingWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<ClothingWoman>()
+        .toList();
+    List<BikinisWoman> mappedBikinisWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedBikinisWoman) => mappedBikinisWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<BikinisWoman>()
+        .toList();
+    List<DenimWoman> mappedDenimWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedDenimWoman) => mappedDenimWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<DenimWoman>()
+        .toList();
+    List<ShoesWoman> mappedShoesWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedShoesWoman) => mappedShoesWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<ShoesWoman>()
+        .toList();
+    List<BagsWoman> mappedBagsWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedBagsWoman) => mappedBagsWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<BagsWoman>()
+        .toList();
+    List<AccessoriesWoman> mappedAccessoriesWoman = (this?.data?.newMan?.map(
+                (mappedAccessoriesWoman) =>
+                    mappedAccessoriesWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<AccessoriesWoman>()
+        .toList();
+    List<EqualsWoman> mappedEqualsWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedEqualsWoman) => mappedEqualsWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<EqualsWoman>()
+        .toList();
+    List<ExclusiveWoman> mappedExclusiveWoman = (this?.data?.newMan?.map(
+                (mappedExclusiveWoman) => mappedExclusiveWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<ExclusiveWoman>()
+        .toList();
+    List<PacificWoman> mappedPacificWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedPacificWoman) => mappedPacificWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<PacificWoman>()
+        .toList();
+    List<UnisexWoman> mappedUnisexWoman = (this
+                ?.data
+                ?.newMan
+                ?.map((mappedUnisexWoman) => mappedUnisexWoman.toDomain()) ??
+            const Iterable.empty())
+        .cast<UnisexWoman>()
+        .toList();
+
+    var data = MenuData(
+      mappedAccessoriesMan,
+      mappedAccessoriesWoman,
+      mappedBagsMan,
+      mappedBagsWoman,
+      mappedBasicsMan,
+      mappedBikinisWoman,
+      mappedClothingMan,
+      mappedClothingWoman,
+      mappedDenimWoman,
+      mappedEqualsWoman,
+      mappedExclusiveWoman,
+      mappedJeansMan,
+      mappedLicensedMan,
+      mappedMidSeasonMan,
+      mappedMidSeasonWoman,
+      mappedNewMan,
+      mappedNewWoman,
+      mappedPacificWoman,
+      mappedShoesMan,
+      mappedShoesWoman,
+      mappedStwdMan,
+      mappedSwimWearMan,
+      mappedUnisexMan,
+      mappedUnisexWoman,
+    );
+    return MenuObject(data);
+  }
+}

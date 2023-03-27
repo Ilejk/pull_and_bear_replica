@@ -10,6 +10,8 @@ abstract class AppServiceClient {
 
   @GET('/home')
   Future<HomeResponse> getHome();
+  @GET('/menu')
+  Future<MenuResponse> getMenu();
 
   @POST('/customer/login')
   Future<AuthResponse> login(
