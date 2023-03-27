@@ -64,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
-  void _changeLanguage() {
+  void _selectRegion() {
     //TODO
   }
 
@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
     Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
   }
 
-  AppBar appBar() {
+  appBar() {
     if (isHome) {
       return AppBar(
         backgroundColor: Colors.transparent,
@@ -114,22 +114,14 @@ class _HomeViewState extends State<HomeView> {
       );
       //TODO: APPBAR SEARCH
     } else if (isMenu) {
-      return AppBar(
-        backgroundColor: Colors.transparent,
-        scrolledUnderElevation: SizeManager.s50,
-        automaticallyImplyLeading: false,
-        elevation: SizeManager.s0,
-        title: Text(
-          StringsManager.pullAndBearTitle,
-          style: TextStyle(
-            fontSize: FontSize.s25,
-            fontWeight: FontWeight.bold,
-            letterSpacing: SizeManager.s3,
-            color: ColorManager.white,
-          ),
+      return PreferredSize(
+        preferredSize: const Size.fromHeight(SizeManager.s1),
+        child: AppBar(
+          backgroundColor: ColorManager.white,
+          automaticallyImplyLeading: false,
+          elevation: SizeManager.s0,
         ),
       );
-      //TODO: APPBAR MENU
     } else if (isBasket) {
       return AppBar(
         backgroundColor: Colors.transparent,
@@ -180,7 +172,7 @@ class _HomeViewState extends State<HomeView> {
         actions: [
           IconButton(
             onPressed: () {
-              _changeLanguage();
+              _selectRegion();
             },
             icon: Icon(
               Icons.language_sharp,
