@@ -56,6 +56,15 @@ class StringsManager {
   static const String newsletter = 'Newsletter';
   static const String customerService = 'Customer service';
   static const String edit = 'Edit';
+  static const String careers = 'CAREERS';
+  static const String joinLife = 'Join Life';
+  static const String pAbCommunitySmall = '#pullandbearcommunity';
+  static const String faqs = 'FAQs';
+  static const String howToReturn = 'How to make a return';
+  static const String giftCard = 'GirftCard';
+  static const String stores = 'Stores';
+  static const String woman = 'WOMAN';
+  static const String man = 'MAN';
 }
 
 class StringsErrorManager {

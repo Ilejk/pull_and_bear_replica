@@ -13,6 +13,7 @@ class ColorManager {
   static Color lightGreen = Colors.lightGreen.shade200;
   static Color green = Colors.green.shade500;
   static Color veryLighGrey = Colors.grey.shade200;
+  static Color blue = Colors.blue.shade600;
 }
 
 extension HexColor on Color {

@@ -473,14 +473,14 @@ extension MenuResponseMapper on MenuResponse? {
         .toList();
     List<BasicsMan> mappedBasicsMan = (this
                 ?.data
-                ?.newMan
+                ?.basicsMan
                 ?.map((mappedBasicsMan) => mappedBasicsMan.toDomain()) ??
             const Iterable.empty())
         .cast<BasicsMan>()
         .toList();
     List<UnisexMan> mappedUnisexMan = (this
                 ?.data
-                ?.newMan
+                ?.unisexMan
                 ?.map((mappedUnisexMan) => mappedUnisexMan.toDomain()) ??
             const Iterable.empty())
         .cast<UnisexMan>()
@@ -493,72 +493,80 @@ extension MenuResponseMapper on MenuResponse? {
             const Iterable.empty())
         .cast<NewWoman>()
         .toList();
-    List<MidSeasonWoman> mappedMidSeasonWoman = (this?.data?.newMan?.map(
-                (mappedMidSeasonWoman) => mappedMidSeasonWoman.toDomain()) ??
+    List<MidSeasonWoman> mappedMidSeasonWoman = (this
+                ?.data
+                ?.midseasonWoman
+                ?.map((mappedMidSeasonWoman) =>
+                    mappedMidSeasonWoman.toDomain()) ??
             const Iterable.empty())
         .cast<MidSeasonWoman>()
         .toList();
-    List<ClothingWoman> mappedClothingWoman = (this?.data?.newMan?.map(
+    List<ClothingWoman> mappedClothingWoman = (this?.data?.clothingWoman?.map(
                 (mappedClothingWoman) => mappedClothingWoman.toDomain()) ??
             const Iterable.empty())
         .cast<ClothingWoman>()
         .toList();
     List<BikinisWoman> mappedBikinisWoman = (this
                 ?.data
-                ?.newMan
+                ?.bikinisWoman
                 ?.map((mappedBikinisWoman) => mappedBikinisWoman.toDomain()) ??
             const Iterable.empty())
         .cast<BikinisWoman>()
         .toList();
     List<DenimWoman> mappedDenimWoman = (this
                 ?.data
-                ?.newMan
+                ?.denimWoman
                 ?.map((mappedDenimWoman) => mappedDenimWoman.toDomain()) ??
             const Iterable.empty())
         .cast<DenimWoman>()
         .toList();
     List<ShoesWoman> mappedShoesWoman = (this
                 ?.data
-                ?.newMan
+                ?.shoesWoman
                 ?.map((mappedShoesWoman) => mappedShoesWoman.toDomain()) ??
             const Iterable.empty())
         .cast<ShoesWoman>()
         .toList();
     List<BagsWoman> mappedBagsWoman = (this
                 ?.data
-                ?.newMan
+                ?.bagsWoman
                 ?.map((mappedBagsWoman) => mappedBagsWoman.toDomain()) ??
             const Iterable.empty())
         .cast<BagsWoman>()
         .toList();
-    List<AccessoriesWoman> mappedAccessoriesWoman = (this?.data?.newMan?.map(
-                (mappedAccessoriesWoman) =>
+    List<AccessoriesWoman> mappedAccessoriesWoman = (this
+                ?.data
+                ?.accessoriesWoman
+                ?.map((mappedAccessoriesWoman) =>
                     mappedAccessoriesWoman.toDomain()) ??
             const Iterable.empty())
         .cast<AccessoriesWoman>()
         .toList();
     List<EqualsWoman> mappedEqualsWoman = (this
                 ?.data
-                ?.newMan
+                ?.equalsWoman
                 ?.map((mappedEqualsWoman) => mappedEqualsWoman.toDomain()) ??
             const Iterable.empty())
         .cast<EqualsWoman>()
         .toList();
-    List<ExclusiveWoman> mappedExclusiveWoman = (this?.data?.newMan?.map(
-                (mappedExclusiveWoman) => mappedExclusiveWoman.toDomain()) ??
+    List<ExclusiveWoman> mappedExclusiveWoman = (this
+                ?.data
+                ?.exclusiveWoman
+                ?.map((mappedExclusiveWoman) =>
+                    mappedExclusiveWoman.toDomain()) ??
             const Iterable.empty())
         .cast<ExclusiveWoman>()
         .toList();
     List<PacificWoman> mappedPacificWoman = (this
                 ?.data
-                ?.newMan
+                ?.pacificWoman
                 ?.map((mappedPacificWoman) => mappedPacificWoman.toDomain()) ??
             const Iterable.empty())
         .cast<PacificWoman>()
         .toList();
     List<UnisexWoman> mappedUnisexWoman = (this
                 ?.data
-                ?.newMan
+                ?.unisexWoman
                 ?.map((mappedUnisexWoman) => mappedUnisexWoman.toDomain()) ??
             const Iterable.empty())
         .cast<UnisexWoman>()
