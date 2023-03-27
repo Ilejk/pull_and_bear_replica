@@ -4,9 +4,9 @@ import 'package:pull_and_bear_replica/src/domain/model/model.dart';
 import 'package:pull_and_bear_replica/src/domain/repository/repository.dart';
 import 'package:pull_and_bear_replica/src/domain/use_case/base_use_case.dart';
 
-class HomeUseCase extends BaseUseCase<void, MenuObject> {
+class MenuUseCase extends BaseUseCase<void, MenuObject> {
   final Repository _repository;
-  HomeUseCase(this._repository);
+  MenuUseCase(this._repository);
 
   @override
   Future<Either<Failure, MenuObject>> execute(void input) async {
