@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pull_and_bear_replica/src/app/app_preferences.dart';
 import 'package:pull_and_bear_replica/src/app/directory_implementer.dart';
 import 'package:pull_and_bear_replica/src/data/data_source/local_data_source.dart';
-import 'package:pull_and_bear_replica/src/presentation/login/login_view_model.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/basket_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/home_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/my_profile_page.dart';
