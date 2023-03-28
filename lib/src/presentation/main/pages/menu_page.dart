@@ -1,5 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:pull_and_bear_replica/main.dart';
+
 import 'package:pull_and_bear_replica/src/app/directory_implementer.dart';
 import 'package:pull_and_bear_replica/src/domain/model/model.dart';
 import 'package:pull_and_bear_replica/src/presentation/common/state_renderer/state_renderer_implementer.dart';
@@ -9,8 +10,11 @@ import 'package:pull_and_bear_replica/src/presentation/resources/font_manager.da
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/values_manager.dart';
 
+// ignore: must_be_immutable
 class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
+  bool index;
+
+  MenuPage(this.index, {super.key});
 
   @override
   State<MenuPage> createState() => _MenuPageState();
@@ -18,7 +22,7 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   final MenuViewModel _viewModel = instance<MenuViewModel>();
-  bool index = true;
+
   @override
   void initState() {
     _bind();
@@ -37,8 +41,8 @@ class _MenuPageState extends State<MenuPage> {
           child: StreamBuilder<FlowState>(
             stream: _viewModel.outputState,
             builder: (context, snapshot) {
-              return snapshot.data
-                      ?.getScreenWidget(context, _getContentWidget(), () {
+              return snapshot.data?.getScreenWidget(
+                      context, _getContentWidget(widget.index), () {
                     _viewModel.start();
                   }) ??
                   Container();
@@ -49,107 +53,12 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 
-  Widget _getContentWidget() {
+  Widget _getContentWidget(bool index) {
     if (index) {
       return _getManContentWidget();
     } else {
       return _getWomanContentWidget();
     }
-  }
-
-  Widget _getAppBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: InkWell(
-            onTap: () {
-              setState(() {
-                index = false;
-              });
-            },
-            child: Container(
-              height: SizeManager.s50,
-              decoration: BoxDecoration(
-                color: index == false
-                    ? ColorManager.white
-                    : ColorManager.veryLighGrey,
-                border: Border(
-                  top: BorderSide(
-                    color: ColorManager.veryLighGrey,
-                    width: SizeManager.s0_7,
-                  ),
-                  bottom: BorderSide(
-                    color: index == false
-                        ? ColorManager.black
-                        : ColorManager.veryLighGrey,
-                    width: SizeManager.s3,
-                  ),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  StringsManager.woman,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s18,
-                    fontWeight: FontWeight.w700,
-                    color: index == false
-                        ? ColorManager.black
-                        : ColorManager.lightGrey,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-        Expanded(
-          child: InkWell(
-            onTap: () {
-              setState(() {
-                index = true;
-              });
-            },
-            child: Container(
-              height: SizeManager.s50,
-              decoration: BoxDecoration(
-                color: index == true
-                    ? ColorManager.white
-                    : ColorManager.veryLighGrey,
-                border: Border(
-                  top: BorderSide(
-                    color: ColorManager.veryLighGrey,
-                    width: SizeManager.s0_7,
-                  ),
-                  bottom: BorderSide(
-                    color: index == true
-                        ? ColorManager.black
-                        : ColorManager.veryLighGrey,
-                    width: SizeManager.s3,
-                  ),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  StringsManager.man,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s18,
-                    fontWeight: FontWeight.w700,
-                    color: index == true
-                        ? ColorManager.black
-                        : ColorManager.lightGrey,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
   }
 
   Widget _getManContentWidget() {
@@ -160,7 +69,6 @@ class _MenuPageState extends State<MenuPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _getAppBar(),
             _getNewManContentWidget(snapshot.data?.newMan),
             _getMidSeasonManContentWidget(snapshot.data?.midSeasonMan),
             _getClothingManContentWidget(snapshot.data?.clothingMan),
@@ -188,7 +96,6 @@ class _MenuPageState extends State<MenuPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _getAppBar(),
             _getNewWomanContentWidget(snapshot.data?.newWoman),
             _getMidSeasonWomanContentWidget(snapshot.data?.midSeasonWoman),
             _getClothingWomanContentWidget(snapshot.data?.clothingWoman),
@@ -214,6 +121,7 @@ class _MenuPageState extends State<MenuPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _bottomContentListTile(StringsManager.careers),
+        _getSpacer(),
         _bottomContentListTile(StringsManager.joinLife),
         _bottomContentListTile(StringsManager.pAbCommunitySmall),
         _bottomContentListTile(StringsManager.faqs),
@@ -221,14 +129,31 @@ class _MenuPageState extends State<MenuPage> {
         _bottomContentListTile(StringsManager.giftCard),
         _bottomContentListTile(StringsManager.stores),
         _bottomContentListTile(StringsManager.newsletter),
+        _getSpacer(),
       ],
     );
   }
 
-  Container _bottomContentListTile(String title) {
+  Widget _getSpacer() {
     return Container(
       width: double.infinity,
-      height: SizeManager.s100,
+      height: SizeManager.s40,
+      decoration: BoxDecoration(
+        color: ColorManager.veryLighGrey,
+        border: Border(
+          bottom: BorderSide(
+            color: ColorManager.veryLighGrey,
+            width: SizeManager.s0_7,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _bottomContentListTile(String title) {
+    return Container(
+      width: double.infinity,
+      height: SizeManager.s60,
       decoration: BoxDecoration(
         color: ColorManager.white,
         border: Border(
@@ -238,13 +163,19 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ),
       ),
-      child: Text(
-        title,
-        style: TextStyle(
-          color: ColorManager.black,
-          fontSize: FontSize.s20,
-          fontWeight: FontWeight.w500,
-          fontFamily: FontConstants.fontFamily,
+      child: Padding(
+        padding: const EdgeInsets.only(left: PaddingManager.p12),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            title,
+            style: TextStyle(
+              color: ColorManager.black,
+              fontSize: FontSize.s20,
+              fontWeight: FontWeight.w500,
+              fontFamily: FontConstants.fontFamily,
+            ),
+          ),
         ),
       ),
     );

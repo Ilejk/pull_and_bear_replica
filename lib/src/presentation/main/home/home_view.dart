@@ -28,7 +28,7 @@ class _HomeViewState extends State<HomeView> {
   bool get isMenu => _currentIndex == 2;
   bool get isSearch => _currentIndex == 1;
   bool get isHome => _currentIndex == 0;
-
+  bool index = true;
   bool isLoggedIn = false;
   Future<void> _isUserLoggedInCheck() async {
     _appPreferences.isUserLoggedIn().then((isUserLoggedIn) {
@@ -39,14 +39,6 @@ class _HomeViewState extends State<HomeView> {
       }
     });
   }
-
-  List<Widget> pages = const [
-    HomePage(),
-    SearchPage(),
-    MenuPage(),
-    BasketPage(),
-    MyProfilePage(),
-  ];
 
   List<String> titles = const [
     StringsManager.home,
@@ -113,13 +105,98 @@ class _HomeViewState extends State<HomeView> {
       );
       //TODO: APPBAR SEARCH
     } else if (isMenu) {
-      return PreferredSize(
-        preferredSize: const Size.fromHeight(SizeManager.s1),
-        child: AppBar(
-          backgroundColor: ColorManager.white,
-          automaticallyImplyLeading: false,
-          elevation: SizeManager.s0,
-        ),
+      return AppBar(
+        backgroundColor: ColorManager.white,
+        automaticallyImplyLeading: false,
+        elevation: SizeManager.s8,
+        actions: [
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  index = false;
+                });
+              },
+              child: Container(
+                height: SizeManager.s50,
+                decoration: BoxDecoration(
+                  color: index == false
+                      ? ColorManager.white
+                      : ColorManager.veryLighGrey,
+                  border: Border(
+                    top: BorderSide(
+                      color: ColorManager.veryLighGrey,
+                      width: SizeManager.s0_7,
+                    ),
+                    bottom: BorderSide(
+                      color: index == false
+                          ? ColorManager.black
+                          : ColorManager.veryLighGrey,
+                      width: SizeManager.s3,
+                    ),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    StringsManager.woman,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: FontConstants.fontFamily,
+                      fontSize: FontSize.s18,
+                      fontWeight: FontWeight.w700,
+                      color: index == false
+                          ? ColorManager.black
+                          : ColorManager.lightGrey,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  index = true;
+                });
+              },
+              child: Container(
+                height: SizeManager.s50,
+                decoration: BoxDecoration(
+                  color: index == true
+                      ? ColorManager.white
+                      : ColorManager.veryLighGrey,
+                  border: Border(
+                    top: BorderSide(
+                      color: ColorManager.veryLighGrey,
+                      width: SizeManager.s0_7,
+                    ),
+                    bottom: BorderSide(
+                      color: index == true
+                          ? ColorManager.black
+                          : ColorManager.veryLighGrey,
+                      width: SizeManager.s3,
+                    ),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    StringsManager.man,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: FontConstants.fontFamily,
+                      fontSize: FontSize.s18,
+                      fontWeight: FontWeight.w700,
+                      color: index == true
+                          ? ColorManager.black
+                          : ColorManager.lightGrey,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       );
     } else if (isBasket) {
       return AppBar(
@@ -228,6 +305,14 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> pages = [
+      const HomePage(),
+      const SearchPage(),
+      MenuPage(index),
+      const BasketPage(),
+      const MyProfilePage(),
+    ];
+
     return Scaffold(
       backgroundColor: ColorManager.white,
       extendBodyBehindAppBar: true,
