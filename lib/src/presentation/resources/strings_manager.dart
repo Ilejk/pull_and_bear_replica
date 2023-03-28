@@ -65,6 +65,12 @@ class StringsManager {
   static const String stores = 'Stores';
   static const String woman = 'WOMAN';
   static const String man = 'MAN';
+  static const String placeUrOrder =
+      'PLACE YOUR ORDER UP UNITIL 29/03 AND RECEIVE IT\nBEFORE EASTER';
+  static const String freeColectionPoints =
+      'Free collection point delivery over 119 PLN and free home delivery\nover  139 PLN. Not applicable to discounted items.';
+  static const String freeStoreDelivery =
+      'Free store delivery and free returns';
 }
 
 class StringsErrorManager {

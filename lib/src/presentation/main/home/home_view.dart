@@ -51,44 +51,55 @@ class _HomeViewState extends State<HomeView> {
   ];
 
   List<Widget> menuBottomSheet = [
-    InkWell(
-      onTap: () {
-        //TODO ON TAP
-      },
-      child: Container(
-        width: double.infinity,
-        height: SizeManager.s60,
-        color: ColorManager.blue,
+    Container(
+      width: double.infinity,
+      height: SizeManager.s60,
+      color: ColorManager.lightOrange,
+      child: Center(
+        child: Text(
+          StringsManager.freeColectionPoints,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: ColorManager.black,
+            fontWeight: FontWeight.w500,
+            fontFamily: FontConstants.fontFamily,
+            fontSize: FontSize.s13,
+          ),
+        ),
       ),
     ),
-    InkWell(
-      onTap: () {
-        //TODO ON TAP
-      },
-      child: Container(
-        width: double.infinity,
-        height: SizeManager.s60,
-        color: ColorManager.green,
+    Container(
+      width: double.infinity,
+      height: SizeManager.s60,
+      color: ColorManager.blue,
+      child: Center(
+        child: Text(
+          StringsManager.placeUrOrder,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: ColorManager.white,
+            fontWeight: FontWeight.w500,
+            fontFamily: FontConstants.fontFamily,
+            fontSize: FontSize.s13,
+          ),
+        ),
       ),
     ),
-    InkWell(
-      onTap: () {
-        //TODO ON TAP
-      },
-      child: Container(
-        width: double.infinity,
-        height: SizeManager.s60,
-        color: ColorManager.black,
-      ),
-    ),
-    InkWell(
-      onTap: () {
-        //TODO ON TAP
-      },
-      child: Container(
-        width: double.infinity,
-        height: SizeManager.s60,
-        color: ColorManager.lightGrey,
+    Container(
+      width: double.infinity,
+      height: SizeManager.s60,
+      color: ColorManager.lightOrange,
+      child: Center(
+        child: Text(
+          StringsManager.freeStoreDelivery,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: ColorManager.black,
+            fontWeight: FontWeight.w500,
+            fontFamily: FontConstants.fontFamily,
+            fontSize: FontSize.s13,
+          ),
+        ),
       ),
     ),
   ];
