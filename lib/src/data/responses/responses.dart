@@ -151,6 +151,86 @@ class CommunityResponse {
 }
 
 @JsonSerializable()
+class NewWomanHomeResponse {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title')
+  String? title;
+  @JsonKey(name: 'image')
+  String? image;
+
+  NewWomanHomeResponse(
+    this.id,
+    this.title,
+    this.image,
+  );
+
+  Map<String, dynamic> toJson() => _$NewWomanHomeResponseToJson(this);
+  factory NewWomanHomeResponse.fromJson(Map<String, dynamic> json) =>
+      _$NewWomanHomeResponseFromJson(json);
+}
+
+@JsonSerializable()
+class BikinisResponse {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title')
+  String? title;
+  @JsonKey(name: 'image')
+  String? image;
+
+  BikinisResponse(
+    this.id,
+    this.title,
+    this.image,
+  );
+
+  Map<String, dynamic> toJson() => _$BikinisResponseToJson(this);
+  factory BikinisResponse.fromJson(Map<String, dynamic> json) =>
+      _$BikinisResponseFromJson(json);
+}
+
+@JsonSerializable()
+class DenimHomeResponse {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title')
+  String? title;
+  @JsonKey(name: 'image')
+  String? image;
+
+  DenimHomeResponse(
+    this.id,
+    this.title,
+    this.image,
+  );
+
+  Map<String, dynamic> toJson() => _$DenimHomeResponseToJson(this);
+  factory DenimHomeResponse.fromJson(Map<String, dynamic> json) =>
+      _$DenimHomeResponseFromJson(json);
+}
+
+@JsonSerializable()
+class AccessoriesWomanHomeResponse {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title')
+  String? title;
+  @JsonKey(name: 'image')
+  String? image;
+
+  AccessoriesWomanHomeResponse(
+    this.id,
+    this.title,
+    this.image,
+  );
+
+  Map<String, dynamic> toJson() => _$AccessoriesWomanHomeResponseToJson(this);
+  factory AccessoriesWomanHomeResponse.fromJson(Map<String, dynamic> json) =>
+      _$AccessoriesWomanHomeResponseFromJson(json);
+}
+
+@JsonSerializable()
 class HomeDataResponse {
   @JsonKey(name: 'new')
   List<NewResponse>? news;
@@ -166,6 +246,14 @@ class HomeDataResponse {
   List<FanCornerResponse>? fancorner;
   @JsonKey(name: 'community')
   List<CommunityResponse>? community;
+  @JsonKey(name: 'new_woman')
+  List<NewWomanHomeResponse>? newWoman;
+  @JsonKey(name: 'bikinis')
+  List<BikinisResponse>? bikinis;
+  @JsonKey(name: 'denim')
+  List<DenimHomeResponse>? denim;
+  @JsonKey(name: 'accessories')
+  List<AccessoriesWomanHomeResponse>? accessories;
 
   HomeDataResponse(
     this.news,
@@ -175,6 +263,10 @@ class HomeDataResponse {
     this.tshirts,
     this.fancorner,
     this.community,
+    this.newWoman,
+    this.bikinis,
+    this.denim,
+    this.accessories,
   );
   Map<String, dynamic> toJson() => _$HomeDataResponseToJson(this);
   factory HomeDataResponse.fromJson(Map<String, dynamic> json) =>

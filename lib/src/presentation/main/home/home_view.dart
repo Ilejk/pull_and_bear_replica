@@ -349,7 +349,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      const HomePage(),
+      HomePage(index),
       const SearchPage(),
       MenuPage(index),
       const BasketPage(),

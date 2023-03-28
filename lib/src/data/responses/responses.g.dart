@@ -113,6 +113,66 @@ Map<String, dynamic> _$CommunityResponseToJson(CommunityResponse instance) =>
       'image': instance.image,
     };
 
+NewWomanHomeResponse _$NewWomanHomeResponseFromJson(
+        Map<String, dynamic> json) =>
+    NewWomanHomeResponse(
+      json['id'] as int?,
+      json['title'] as String?,
+      json['image'] as String?,
+    );
+
+Map<String, dynamic> _$NewWomanHomeResponseToJson(
+        NewWomanHomeResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'image': instance.image,
+    };
+
+BikinisResponse _$BikinisResponseFromJson(Map<String, dynamic> json) =>
+    BikinisResponse(
+      json['id'] as int?,
+      json['title'] as String?,
+      json['image'] as String?,
+    );
+
+Map<String, dynamic> _$BikinisResponseToJson(BikinisResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'image': instance.image,
+    };
+
+DenimHomeResponse _$DenimHomeResponseFromJson(Map<String, dynamic> json) =>
+    DenimHomeResponse(
+      json['id'] as int?,
+      json['title'] as String?,
+      json['image'] as String?,
+    );
+
+Map<String, dynamic> _$DenimHomeResponseToJson(DenimHomeResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'image': instance.image,
+    };
+
+AccessoriesWomanHomeResponse _$AccessoriesWomanHomeResponseFromJson(
+        Map<String, dynamic> json) =>
+    AccessoriesWomanHomeResponse(
+      json['id'] as int?,
+      json['title'] as String?,
+      json['image'] as String?,
+    );
+
+Map<String, dynamic> _$AccessoriesWomanHomeResponseToJson(
+        AccessoriesWomanHomeResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'image': instance.image,
+    };
+
 HomeDataResponse _$HomeDataResponseFromJson(Map<String, dynamic> json) =>
     HomeDataResponse(
       (json['new'] as List<dynamic>?)
@@ -136,6 +196,19 @@ HomeDataResponse _$HomeDataResponseFromJson(Map<String, dynamic> json) =>
       (json['community'] as List<dynamic>?)
           ?.map((e) => CommunityResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
+      (json['new_woman'] as List<dynamic>?)
+          ?.map((e) => NewWomanHomeResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['bikinis'] as List<dynamic>?)
+          ?.map((e) => BikinisResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['denim'] as List<dynamic>?)
+          ?.map((e) => DenimHomeResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['accessories'] as List<dynamic>?)
+          ?.map((e) =>
+              AccessoriesWomanHomeResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$HomeDataResponseToJson(HomeDataResponse instance) =>
@@ -147,6 +220,10 @@ Map<String, dynamic> _$HomeDataResponseToJson(HomeDataResponse instance) =>
       'tshirts': instance.tshirts,
       'fancorner': instance.fancorner,
       'community': instance.community,
+      'new_woman': instance.newWoman,
+      'bikinis': instance.bikinis,
+      'denim': instance.denim,
+      'accessories': instance.accessories,
     };
 
 HomeResponse _$HomeResponseFromJson(Map<String, dynamic> json) => HomeResponse(

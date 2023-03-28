@@ -82,6 +82,54 @@ class Community {
   );
 }
 
+class NewWomanHome {
+  int id;
+  String title;
+  String image;
+
+  NewWomanHome(
+    this.id,
+    this.title,
+    this.image,
+  );
+}
+
+class BikinisWomanHome {
+  int id;
+  String title;
+  String image;
+
+  BikinisWomanHome(
+    this.id,
+    this.title,
+    this.image,
+  );
+}
+
+class DenimWomanHome {
+  int id;
+  String title;
+  String image;
+
+  DenimWomanHome(
+    this.id,
+    this.title,
+    this.image,
+  );
+}
+
+class AccessoriesWomanHome {
+  int id;
+  String title;
+  String image;
+
+  AccessoriesWomanHome(
+    this.id,
+    this.title,
+    this.image,
+  );
+}
+
 class HomeData {
   List<News> news;
   List<MidSeason> midSeason;
@@ -90,6 +138,10 @@ class HomeData {
   List<TShirts> tShirts;
   List<FanCorner> fanCorner;
   List<Community> community;
+  List<NewWomanHome> newWomanHome;
+  List<BikinisWomanHome> bikinisWomanHome;
+  List<DenimWomanHome> denimWomanHome;
+  List<AccessoriesWomanHome> accessoriesWomanHome;
 
   HomeData(
     this.news,
@@ -99,6 +151,10 @@ class HomeData {
     this.tShirts,
     this.fanCorner,
     this.community,
+    this.newWomanHome,
+    this.bikinisWomanHome,
+    this.denimWomanHome,
+    this.accessoriesWomanHome,
   );
 }
 

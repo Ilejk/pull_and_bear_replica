@@ -46,6 +46,10 @@ class HomeViewModel extends BaseViewModel
           homeObject.data.tShirts,
           homeObject.data.fanCorner,
           homeObject.data.community,
+          homeObject.data.newWomanHome,
+          homeObject.data.bikinisWomanHome,
+          homeObject.data.denimWomanHome,
+          homeObject.data.accessoriesWomanHome,
         ),
       );
     });
@@ -81,6 +85,10 @@ class HomeViewObject {
   List<TShirts> tShirts;
   List<FanCorner> fanCorner;
   List<Community> community;
+  List<NewWomanHome> newWomanHome;
+  List<BikinisWomanHome> bikinisWomanHome;
+  List<DenimWomanHome> denimWomanHome;
+  List<AccessoriesWomanHome> accessoriesWomanHome;
 
   HomeViewObject(
     this.news,
@@ -90,5 +98,9 @@ class HomeViewObject {
     this.tShirts,
     this.fanCorner,
     this.community,
+    this.newWomanHome,
+    this.bikinisWomanHome,
+    this.denimWomanHome,
+    this.accessoriesWomanHome,
   );
 }

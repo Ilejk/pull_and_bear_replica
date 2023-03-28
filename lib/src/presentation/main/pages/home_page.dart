@@ -9,8 +9,10 @@ import 'package:pull_and_bear_replica/src/presentation/resources/font_manager.da
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/values_manager.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  bool index;
+  HomePage(this.index, {super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -35,8 +37,11 @@ class _HomePageState extends State<HomePage> {
         child: StreamBuilder<FlowState>(
           stream: _viewModel.outputState,
           builder: (context, snapshot) {
-            return snapshot.data?.getScreenWidget(context, _getContentWidget(),
-                    () {
+            return snapshot.data?.getScreenWidget(
+                    context,
+                    widget.index == true
+                        ? _getContentManWidget()
+                        : _getContentWomanWidget(), () {
                   _viewModel.start();
                 }) ??
                 Container();
@@ -46,7 +51,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _getContentWidget() {
+  Widget _getContentManWidget() {
     return StreamBuilder<HomeViewObject>(
       stream: _viewModel.outputHomeData,
       builder: (context, snapshot) {
@@ -70,6 +75,155 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+
+  Widget _getContentWomanWidget() {
+    return StreamBuilder<HomeViewObject>(
+      stream: _viewModel.outputHomeData,
+      builder: (context, snapshot) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            _getNewWomanWidget(snapshot.data?.newWomanHome),
+            _getFreeReturnSpacerWidget(),
+            _getMidSeasonWidget(snapshot.data?.midSeason),
+            _getBikinsWidget(snapshot.data?.bikinisWomanHome),
+            _getDenimWidget(snapshot.data?.denimWomanHome),
+            _getAccessoriesWidget(snapshot.data?.accessoriesWomanHome),
+            _getCommunityInfoSpacerWidget(),
+            _getCommunityWidget(snapshot.data?.community),
+            _getCommunityJoinButton(),
+            _getNewsLetterWidget(),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _getNewWomanWidget(List<NewWomanHome>? newWomanHome) {
+    if (newWomanHome != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: PaddingManager.p18),
+          child: SizedBox(
+            width: double.infinity,
+            height: SizeManager.s700,
+            child: CarouselSlider(
+              items: newWomanHome
+                  .map((newWomanHome) => SizedBox(
+                        width: SizeManager.s450,
+                        child: Image.network(
+                          newWomanHome.image,
+                          fit: BoxFit.cover,
+                        ),
+                      ))
+                  .toList(),
+              options: CarouselOptions(
+                height: SizeManager.s700,
+                autoPlay: true,
+                enableInfiniteScroll: true,
+                enlargeCenterPage: true,
+                viewportFraction: SizeManager.s1,
+                autoPlayInterval: const Duration(
+                  seconds: DurationManager.s6,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    } else {
+      return Container();
+    }
+  }
+
+  Widget _getBikinsWidget(List<BikinisWomanHome>? bikinisWomanHome) {
+    if (bikinisWomanHome != null) {
+      return Padding(
+        padding: const EdgeInsets.only(
+          bottom: PaddingManager.p18,
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          height: SizeManager.s700,
+          child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            children: bikinisWomanHome
+                .map((bikinisWomanHome) => SizedBox(
+                      width: SizeManager.s500,
+                      child: Image.network(
+                        bikinisWomanHome.image,
+                        fit: BoxFit.cover,
+                      ),
+                    ))
+                .toList(),
+          ),
+        ),
+      );
+    } else {
+      return Container();
+    }
+  }
+
+  Widget _getDenimWidget(List<DenimWomanHome>? denimWomanHome) {
+    if (denimWomanHome != null) {
+      return Padding(
+        padding: const EdgeInsets.only(
+          bottom: PaddingManager.p18,
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          height: SizeManager.s700,
+          child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            children: denimWomanHome
+                .map((denimWomanHome) => SizedBox(
+                      width: SizeManager.s500,
+                      child: Image.network(
+                        denimWomanHome.image,
+                        fit: BoxFit.cover,
+                      ),
+                    ))
+                .toList(),
+          ),
+        ),
+      );
+    } else {
+      return Container();
+    }
+  }
+
+  Widget _getAccessoriesWidget(
+      List<AccessoriesWomanHome>? accessoriesWomanHome) {
+    if (accessoriesWomanHome != null) {
+      return Padding(
+        padding: const EdgeInsets.only(
+          bottom: PaddingManager.p18,
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          height: SizeManager.s700,
+          child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            children: accessoriesWomanHome
+                .map((accessoriesWomanHome) => SizedBox(
+                      width: SizeManager.s500,
+                      child: Image.network(
+                        accessoriesWomanHome.image,
+                        fit: BoxFit.cover,
+                      ),
+                    ))
+                .toList(),
+          ),
+        ),
+      );
+    } else {
+      return Container();
+    }
   }
 
   Widget _getFreeReturnSpacerWidget() {
@@ -357,7 +511,6 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     } else {
-      print('empty');
       return Container();
     }
   }

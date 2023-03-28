@@ -22,7 +22,6 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   final MenuViewModel _viewModel = instance<MenuViewModel>();
-  bool _showContainer = true;
 
   @override
   void initState() {

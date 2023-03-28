@@ -73,6 +73,46 @@ extension CommunityResponseMapper on CommunityResponse? {
   }
 }
 
+extension NewWomanHomeMapper on NewWomanHomeResponse? {
+  NewWomanHome toDomain() {
+    return NewWomanHome(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension BikinisWomanHomeMapper on BikinisResponse? {
+  BikinisWomanHome toDomain() {
+    return BikinisWomanHome(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension DenimWomanHomeMapper on DenimHomeResponse? {
+  DenimWomanHome toDomain() {
+    return DenimWomanHome(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
+extension AccessoriesWomanHomeMapper on AccessoriesWomanHomeResponse? {
+  AccessoriesWomanHome toDomain() {
+    return AccessoriesWomanHome(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title?.orEmpty() ?? Constants.empty,
+      this?.image?.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
 extension HomeResponseMapper on HomeResponse? {
   HomeObject toDomain() {
     List<News> mappedNews =
@@ -120,6 +160,32 @@ extension HomeResponseMapper on HomeResponse? {
             const Iterable.empty())
         .cast<Community>()
         .toList();
+    List<NewWomanHome> mappedNewWomanHome = (this
+                ?.data
+                ?.newWoman
+                ?.map((mappedNewWomanHome) => mappedNewWomanHome.toDomain()) ??
+            const Iterable.empty())
+        .cast<NewWomanHome>()
+        .toList();
+    List<BikinisWomanHome> mappedBikinisWomanHome = (this?.data?.bikinis?.map(
+                (mappedBikinisWomanHome) =>
+                    mappedBikinisWomanHome.toDomain()) ??
+            const Iterable.empty())
+        .cast<BikinisWomanHome>()
+        .toList();
+    List<DenimWomanHome> mappedDenimWomanHome = (this?.data?.denim?.map(
+                (mappedDenimWomanHome) => mappedDenimWomanHome.toDomain()) ??
+            const Iterable.empty())
+        .cast<DenimWomanHome>()
+        .toList();
+    List<AccessoriesWomanHome> mappedAccessoriesWomanHome = (this
+                ?.data
+                ?.accessories
+                ?.map((mappedAccessoriesWomanHome) =>
+                    mappedAccessoriesWomanHome.toDomain()) ??
+            const Iterable.empty())
+        .cast<AccessoriesWomanHome>()
+        .toList();
 
     var data = HomeData(
       mappedNews,
@@ -129,6 +195,10 @@ extension HomeResponseMapper on HomeResponse? {
       mappedTShirts,
       mappedFanCorner,
       mappedCommunity,
+      mappedNewWomanHome,
+      mappedBikinisWomanHome,
+      mappedDenimWomanHome,
+      mappedAccessoriesWomanHome,
     );
     return HomeObject(data);
   }
