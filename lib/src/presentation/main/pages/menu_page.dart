@@ -22,6 +22,7 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   final MenuViewModel _viewModel = instance<MenuViewModel>();
+  bool _showContainer = true;
 
   @override
   void initState() {
@@ -151,29 +152,34 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   Widget _bottomContentListTile(String title) {
-    return Container(
-      width: double.infinity,
-      height: SizeManager.s60,
-      decoration: BoxDecoration(
-        color: ColorManager.white,
-        border: Border(
-          bottom: BorderSide(
-            color: ColorManager.veryLighGrey,
-            width: SizeManager.s0_7,
+    return InkWell(
+      onTap: () {
+        //TODO ON TAP
+      },
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s60,
+        decoration: BoxDecoration(
+          color: ColorManager.white,
+          border: Border(
+            bottom: BorderSide(
+              color: ColorManager.veryLighGrey,
+              width: SizeManager.s0_7,
+            ),
           ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: PaddingManager.p12),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            title,
-            style: TextStyle(
-              color: ColorManager.black,
-              fontSize: FontSize.s20,
-              fontWeight: FontWeight.w500,
-              fontFamily: FontConstants.fontFamily,
+        child: Padding(
+          padding: const EdgeInsets.only(left: PaddingManager.p12),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              title,
+              style: TextStyle(
+                color: ColorManager.black,
+                fontSize: FontSize.s20,
+                fontWeight: FontWeight.w500,
+                fontFamily: FontConstants.fontFamily,
+              ),
             ),
           ),
         ),
@@ -182,43 +188,48 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   Widget _contentListTile(String image, String title, Color color) {
-    return Container(
-      width: double.infinity,
-      height: SizeManager.s130,
-      decoration: BoxDecoration(
-        color: ColorManager.white,
-        border: Border(
-          bottom: BorderSide(
-            color: ColorManager.veryLighGrey,
-            width: SizeManager.s0_7,
+    return InkWell(
+      onTap: () {
+        //TODO ON TAP
+      },
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s130,
+        decoration: BoxDecoration(
+          color: ColorManager.white,
+          border: Border(
+            bottom: BorderSide(
+              color: ColorManager.veryLighGrey,
+              width: SizeManager.s0_7,
+            ),
           ),
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: SizeManager.s110,
-            height: SizeManager.s110,
-            child: Padding(
-              padding: const EdgeInsets.all(PaddingManager.p12),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(SizeManager.s16),
-                child: Image.network(image),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: SizeManager.s110,
+              height: SizeManager.s110,
+              child: Padding(
+                padding: const EdgeInsets.all(PaddingManager.p12),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(SizeManager.s16),
+                  child: Image.network(image),
+                ),
               ),
             ),
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              color: color,
-              fontSize: FontSize.s22,
-              fontWeight: FontWeight.w700,
-              fontFamily: FontConstants.fontFamily,
+            Text(
+              title,
+              style: TextStyle(
+                color: color,
+                fontSize: FontSize.s22,
+                fontWeight: FontWeight.w700,
+                fontFamily: FontConstants.fontFamily,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

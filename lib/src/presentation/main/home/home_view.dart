@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_and_bear_replica/src/app/app_preferences.dart';
 import 'package:pull_and_bear_replica/src/app/directory_implementer.dart';
@@ -30,6 +31,7 @@ class _HomeViewState extends State<HomeView> {
   bool get isHome => _currentIndex == 0;
   bool index = true;
   bool isLoggedIn = false;
+  bool showBottomSheet = true;
   Future<void> _isUserLoggedInCheck() async {
     _appPreferences.isUserLoggedIn().then((isUserLoggedIn) {
       if (isUserLoggedIn) {
@@ -48,6 +50,48 @@ class _HomeViewState extends State<HomeView> {
     StringsManager.myProfile,
   ];
 
+  List<Widget> menuBottomSheet = [
+    InkWell(
+      onTap: () {
+        //TODO ON TAP
+      },
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s60,
+        color: ColorManager.blue,
+      ),
+    ),
+    InkWell(
+      onTap: () {
+        //TODO ON TAP
+      },
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s60,
+        color: ColorManager.green,
+      ),
+    ),
+    InkWell(
+      onTap: () {
+        //TODO ON TAP
+      },
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s60,
+        color: ColorManager.black,
+      ),
+    ),
+    InkWell(
+      onTap: () {
+        //TODO ON TAP
+      },
+      child: Container(
+        width: double.infinity,
+        height: SizeManager.s60,
+        color: ColorManager.lightGrey,
+      ),
+    ),
+  ];
   var _currentIndex = 0;
   ontap(int index) {
     setState(() {
@@ -120,16 +164,15 @@ class _HomeViewState extends State<HomeView> {
               child: Container(
                 height: SizeManager.s50,
                 decoration: BoxDecoration(
-                  color: index == false
-                      ? ColorManager.white
-                      : ColorManager.veryLighGrey,
+                  color:
+                      isWoman ? ColorManager.white : ColorManager.veryLighGrey,
                   border: Border(
                     top: BorderSide(
                       color: ColorManager.veryLighGrey,
                       width: SizeManager.s0_7,
                     ),
                     bottom: BorderSide(
-                      color: index == false
+                      color: isWoman
                           ? ColorManager.black
                           : ColorManager.veryLighGrey,
                       width: SizeManager.s3,
@@ -144,9 +187,8 @@ class _HomeViewState extends State<HomeView> {
                       fontFamily: FontConstants.fontFamily,
                       fontSize: FontSize.s18,
                       fontWeight: FontWeight.w700,
-                      color: index == false
-                          ? ColorManager.black
-                          : ColorManager.lightGrey,
+                      color:
+                          isWoman ? ColorManager.black : ColorManager.lightGrey,
                     ),
                   ),
                 ),
@@ -163,16 +205,14 @@ class _HomeViewState extends State<HomeView> {
               child: Container(
                 height: SizeManager.s50,
                 decoration: BoxDecoration(
-                  color: index == true
-                      ? ColorManager.white
-                      : ColorManager.veryLighGrey,
+                  color: isMan ? ColorManager.white : ColorManager.veryLighGrey,
                   border: Border(
                     top: BorderSide(
                       color: ColorManager.veryLighGrey,
                       width: SizeManager.s0_7,
                     ),
                     bottom: BorderSide(
-                      color: index == true
+                      color: isMan
                           ? ColorManager.black
                           : ColorManager.veryLighGrey,
                       width: SizeManager.s3,
@@ -187,9 +227,8 @@ class _HomeViewState extends State<HomeView> {
                       fontFamily: FontConstants.fontFamily,
                       fontSize: FontSize.s18,
                       fontWeight: FontWeight.w700,
-                      color: index == true
-                          ? ColorManager.black
-                          : ColorManager.lightGrey,
+                      color:
+                          isMan ? ColorManager.black : ColorManager.lightGrey,
                     ),
                   ),
                 ),
@@ -297,6 +336,10 @@ class _HomeViewState extends State<HomeView> {
     }
   }
 
+  bool get isWoman => index == false;
+
+  bool get isMan => index == true;
+
   @override
   void initState() {
     _isUserLoggedInCheck();
@@ -317,6 +360,19 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: ColorManager.white,
       extendBodyBehindAppBar: true,
       appBar: appBar(),
+      bottomSheet: isMenu && isShowBottomSheet
+          ? CarouselSlider(
+              items: menuBottomSheet,
+              options: CarouselOptions(
+                height: SizeManager.s60,
+                autoPlay: true,
+                enableInfiniteScroll: true,
+                viewportFraction: SizeManager.s1,
+              ),
+            )
+          : Container(
+              height: SizeManager.s0,
+            ),
       body: pages[_currentIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(boxShadow: [
@@ -361,4 +417,6 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
+
+  bool get isShowBottomSheet => showBottomSheet == true;
 }
