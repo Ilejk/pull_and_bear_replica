@@ -7,6 +7,8 @@ abstract class LocalDataSource {
   Future<void> saveHomeToCache(HomeResponse homeResponse);
   Future<MenuResponse> getMenu();
   Future<void> saveMenuToCache(MenuResponse menuResponse);
+  Future<NewCatReponse> getMenuNew();
+  Future<void> saveMenuNewToCache(NewCatReponse newCatReponse);
   void clearCache();
   void removeFromCache(String key);
 }
@@ -54,6 +56,23 @@ class LocalDataSourceImplementer implements LocalDataSource {
   @override
   Future<void> saveMenuToCache(MenuResponse menuResponse) async {
     cacheMap[Constants.cacheMenuKey] = CachedItem(menuResponse);
+  }
+
+  @override
+  Future<NewCatReponse> getMenuNew() async {
+    CachedItem? cachedItem = cacheMap[Constants.cacheMenuNewKey];
+
+    if (cachedItem != null &&
+        cachedItem.isValid(Constants.cacheMenuNewInterval)) {
+      return cachedItem.data;
+    } else {
+      throw ErrorHandler.handle(DataSource.cacheError);
+    }
+  }
+
+  @override
+  Future<void> saveMenuNewToCache(NewCatReponse newCatReponse) async {
+    cacheMap[Constants.cacheMenuNewKey] = CachedItem(newCatReponse);
   }
 }
 

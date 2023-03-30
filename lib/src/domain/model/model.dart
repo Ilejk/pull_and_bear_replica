@@ -545,3 +545,275 @@ class MenuObject {
 
   MenuObject(this.data);
 }
+
+class ManNew1 {
+  int id;
+  String title1;
+  String image1;
+  String image2;
+  String image3;
+  String image4;
+  double price1;
+
+  ManNew1(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.image4,
+    this.price1,
+  );
+}
+
+class ManNew2 {
+  int id;
+  String title1;
+  String image1;
+  double price1;
+
+  ManNew2(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+}
+
+class ManNew3 {
+  int id;
+  String title1;
+  String title2;
+  String title3;
+  String image1;
+  String image2;
+  String image3;
+  double price1;
+  double price2;
+  double price3;
+
+  ManNew3(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+}
+
+class ManNew4 {
+  int id;
+  String title1;
+  String image1;
+  double price1;
+
+  ManNew4(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+}
+
+class ManNew5 {
+  int id;
+  String title1;
+  String image1;
+  String image2;
+  String image3;
+  double price1;
+
+  ManNew5(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+  );
+}
+
+class ManNew6 {
+  int id;
+  String title1;
+  String title2;
+  String title3;
+  String image1;
+  String image2;
+  String image3;
+  double price1;
+  double price2;
+  double price3;
+
+  ManNew6(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+}
+
+class WomanNew1 {
+  int id;
+  String title1;
+  String image1;
+  String image2;
+  String image3;
+  String image4;
+  double price1;
+
+  WomanNew1(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.image4,
+    this.price1,
+  );
+}
+
+class WomanNew2 {
+  int id;
+  String title1;
+  String image1;
+  double price1;
+
+  WomanNew2(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+}
+
+class WomanNew3 {
+  int id;
+  String title1;
+  String title2;
+  String title3;
+  String image1;
+  String image2;
+  String image3;
+  double price1;
+  double price2;
+  double price3;
+
+  WomanNew3(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+}
+
+class WomanNew4 {
+  int id;
+  String title1;
+  String image1;
+  double price1;
+
+  WomanNew4(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+}
+
+class WomanNew5 {
+  int id;
+  String title1;
+  String image1;
+  String image2;
+  String image3;
+  double price1;
+
+  WomanNew5(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+  );
+}
+
+class WomanNew6 {
+  int id;
+  String title1;
+  String title2;
+  String title3;
+  String image1;
+  String image2;
+  String image3;
+  double price1;
+  double price2;
+  double price3;
+
+  WomanNew6(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+}
+
+class MenuNewData {
+  ManNew1 manNew1;
+  ManNew2 manNew2;
+  ManNew3 manNew3;
+  ManNew4 manNew4;
+  ManNew5 manNew5;
+  ManNew6 manNew6;
+  WomanNew1 womanNew1;
+  WomanNew2 womanNew2;
+  WomanNew3 womanNew3;
+  WomanNew4 womanNew4;
+  WomanNew5 womanNew5;
+  WomanNew6 womanNew6;
+
+  MenuNewData(
+    this.manNew1,
+    this.manNew2,
+    this.manNew3,
+    this.manNew4,
+    this.manNew5,
+    this.manNew6,
+    this.womanNew1,
+    this.womanNew2,
+    this.womanNew3,
+    this.womanNew4,
+    this.womanNew5,
+    this.womanNew6,
+  );
+}
+
+class MenuNewObject {
+  MenuNewData data;
+
+  MenuNewObject(this.data);
+}

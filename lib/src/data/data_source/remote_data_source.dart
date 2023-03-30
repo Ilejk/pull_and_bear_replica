@@ -5,6 +5,7 @@ import 'package:pull_and_bear_replica/src/data/responses/responses.dart';
 abstract class RemoteDataSource {
   Future<HomeResponse> getHome();
   Future<MenuResponse> getMenu();
+  Future<NewCatReponse> getMenuNew();
   Future<AuthResponse> login(LoginRequest loginRequest);
   Future<AuthResponse> register(RegisterRequest registerRequest);
 }
@@ -39,5 +40,10 @@ class RemoteDataSourceClassImplementer implements RemoteDataSource {
   @override
   Future<MenuResponse> getMenu() async {
     return await _appServiceClient.getMenu();
+  }
+
+  @override
+  Future<NewCatReponse> getMenuNew() async {
+    return await _appServiceClient.getMenuNew();
   }
 }

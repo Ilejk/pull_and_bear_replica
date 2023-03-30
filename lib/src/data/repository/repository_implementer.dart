@@ -150,4 +150,40 @@ class RepositoryImplementer extends Repository {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, MenuNewObject>> getMenuNew() async {
+    try {
+      final reponse = await _localDataSource.getMenuNew();
+      return Right(reponse.toDomain());
+    } catch (cacheError) {
+      if (await _networkInfo.isConnected) {
+        try {
+          final reponse = await _remoteDataSource.getMenuNew();
+          if (reponse.baseResponseStatus == ApiInternalStatus.success) {
+            _localDataSource.saveMenuNewToCache(reponse);
+            return Right(reponse.toDomain());
+          } else {
+            return Left(
+              Failure(
+                code: reponse.baseResponseStatus ?? ApiInternalStatus.failure,
+                message: reponse.message ??
+                    reponse.message ??
+                    ResponseMessage.unknown,
+              ),
+            );
+          }
+        } catch (error) {
+          return Left(ErrorHandler.handle(error).failure);
+        }
+      } else {
+        return Left(
+          Failure(
+            code: ResponseCode.noInternetConnection,
+            message: ResponseMessage.noInternetConnection,
+          ),
+        );
+      }
+    }
+  }
 }

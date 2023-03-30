@@ -7,6 +7,7 @@ import 'package:pull_and_bear_replica/src/presentation/common/state_renderer/sta
 import 'package:pull_and_bear_replica/src/presentation/menu/menu_view_model.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/colors_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/font_manager.dart';
+import 'package:pull_and_bear_replica/src/presentation/resources/routes_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/values_manager.dart';
 
@@ -186,11 +187,10 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 
-  Widget _contentListTile(String image, String title, Color color) {
+  Widget _contentListTile(
+      String image, String title, Color color, VoidCallback onTap) {
     return InkWell(
-      onTap: () {
-        //TODO ON TAP
-      },
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         height: SizeManager.s130,
@@ -241,6 +241,9 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {
+          Navigator.of(context).pushNamed(Routes.menuNewPage);
+        },
       );
     } else {
       return Container();
@@ -255,6 +258,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.green,
+        () {},
       );
     } else {
       return Container();
@@ -269,6 +273,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -283,6 +288,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -297,6 +303,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.blue,
+        () {},
       );
     } else {
       return Container();
@@ -311,6 +318,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -325,6 +333,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -340,6 +349,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -354,6 +364,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -368,6 +379,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -382,6 +394,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -396,6 +409,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -410,6 +424,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -424,6 +439,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.green,
+        () {},
       );
     } else {
       return Container();
@@ -438,6 +454,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -452,6 +469,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -466,6 +484,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -480,6 +499,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -494,6 +514,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -508,6 +529,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -522,6 +544,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -536,6 +559,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -550,6 +574,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();
@@ -564,6 +589,7 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
+        () {},
       );
     } else {
       return Container();

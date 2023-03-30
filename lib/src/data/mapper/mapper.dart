@@ -671,3 +671,202 @@ extension MenuResponseMapper on MenuResponse? {
     return MenuObject(data);
   }
 }
+
+extension ManNew1Mapper on ManMenuNew1Response? {
+  ManNew1 toDomain() {
+    return ManNew1(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.image4?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension ManNew2Mapper on ManMenuNew2Response? {
+  ManNew2 toDomain() {
+    return ManNew2(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension ManNew3Mapper on ManMenuNew3Response? {
+  ManNew3 toDomain() {
+    return ManNew3(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.title2?.orEmpty() ?? Constants.empty,
+      this?.title3?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+      this?.price2?.orZeroD() ?? Constants.zeroD,
+      this?.price3?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension ManNew4Mapper on ManMenuNew4Response? {
+  ManNew4 toDomain() {
+    return ManNew4(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension ManNew5Mapper on ManMenuNew5Response? {
+  ManNew5 toDomain() {
+    return ManNew5(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension ManNew6Mapper on ManMenuNew6Response? {
+  ManNew6 toDomain() {
+    return ManNew6(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.title2?.orEmpty() ?? Constants.empty,
+      this?.title3?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+      this?.price2?.orZeroD() ?? Constants.zeroD,
+      this?.price3?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension WomanNew1Mapper on WomanMenuNew1Response? {
+  WomanNew1 toDomain() {
+    return WomanNew1(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.image4?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension WomanNew2Mapper on WomanMenuNew2Response? {
+  WomanNew2 toDomain() {
+    return WomanNew2(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension WomanNew3Mapper on WomanMenuNew3Response? {
+  WomanNew3 toDomain() {
+    return WomanNew3(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.title2?.orEmpty() ?? Constants.empty,
+      this?.title3?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+      this?.price2?.orZeroD() ?? Constants.zeroD,
+      this?.price3?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension WomanNew4Mapper on WomanMenuNew4Response? {
+  WomanNew4 toDomain() {
+    return WomanNew4(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension WomanNew5Mapper on WomanMenuNew5Response? {
+  WomanNew5 toDomain() {
+    return WomanNew5(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension WomanNew6Mapper on WomanMenuNew6Response? {
+  WomanNew6 toDomain() {
+    return WomanNew6(
+      this?.id?.orZero() ?? Constants.zero,
+      this?.title1?.orEmpty() ?? Constants.empty,
+      this?.title2?.orEmpty() ?? Constants.empty,
+      this?.title3?.orEmpty() ?? Constants.empty,
+      this?.image1?.orEmpty() ?? Constants.empty,
+      this?.image2?.orEmpty() ?? Constants.empty,
+      this?.image3?.orEmpty() ?? Constants.empty,
+      this?.price1?.orZeroD() ?? Constants.zeroD,
+      this?.price2?.orZeroD() ?? Constants.zeroD,
+      this?.price3?.orZeroD() ?? Constants.zeroD,
+    );
+  }
+}
+
+extension MenuNewCatMapper on NewCatReponse? {
+  MenuNewObject toDomain() {
+    ManNew1 mappedManNew1 = this?.data?.manMenuNew1Response as ManNew1;
+    ManNew2 mappedManNew2 = this?.data?.manMenuNew2Response as ManNew2;
+    ManNew3 mappedManNew3 = this?.data?.manMenuNew3Response as ManNew3;
+    ManNew4 mappedManNew4 = this?.data?.manMenuNew4Response as ManNew4;
+    ManNew5 mappedManNew5 = this?.data?.manMenuNew5Response as ManNew5;
+    ManNew6 mappedManNew6 = this?.data?.manMenuNew6Response as ManNew6;
+    WomanNew1 mappedWomanNew1 = this?.data?.womanMenuNew1Response as WomanNew1;
+    WomanNew2 mappedWomanNew2 = this?.data?.womanMenuNew2Response as WomanNew2;
+    WomanNew3 mappedWomanNew3 = this?.data?.womanMenuNew3Response as WomanNew3;
+    WomanNew4 mappedWomanNew4 = this?.data?.womanMenuNew4Response as WomanNew4;
+    WomanNew5 mappedWomanNew5 = this?.data?.womanMenuNew5Response as WomanNew5;
+    WomanNew6 mappedWomanNew6 = this?.data?.womanMenuNew6Response as WomanNew6;
+
+    var data = MenuNewData(
+      mappedManNew1,
+      mappedManNew2,
+      mappedManNew3,
+      mappedManNew4,
+      mappedManNew5,
+      mappedManNew6,
+      mappedWomanNew1,
+      mappedWomanNew2,
+      mappedWomanNew3,
+      mappedWomanNew4,
+      mappedWomanNew5,
+      mappedWomanNew6,
+    );
+    return MenuNewObject(data);
+  }
+}

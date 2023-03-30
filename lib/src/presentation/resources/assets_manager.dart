@@ -11,6 +11,8 @@ class ImageManager {
   static const String myPurchases = '$imagePath/purchase.jpg';
   static const String returns = '$imagePath/returns.jpg';
   static const String newsletter = '$imagePath/newsletter.jpg';
+  static const String basketEmpty = '$imagePath/basket_empty.jpg';
+  static const String wishListEmpty = '$imagePath/whish_list_empty.jpg';
 }
 
 class JsonAssetsManager {

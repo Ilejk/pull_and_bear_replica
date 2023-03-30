@@ -904,3 +904,439 @@ class MenuResponse extends BaseResponse {
   factory MenuResponse.fromJson(Map<String, dynamic> json) =>
       _$MenuResponseFromJson(json);
 }
+
+@JsonSerializable()
+class ManMenuNew1Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'image4')
+  String? image4;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  ManMenuNew1Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.image4,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$ManMenuNew1ResponseToJson(this);
+  factory ManMenuNew1Response.fromJson(Map<String, dynamic> json) =>
+      _$ManMenuNew1ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class ManMenuNew2Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  ManMenuNew2Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$ManMenuNew2ResponseToJson(this);
+  factory ManMenuNew2Response.fromJson(Map<String, dynamic> json) =>
+      _$ManMenuNew2ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class ManMenuNew3Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'title2')
+  String? title2;
+  @JsonKey(name: 'title3')
+  String? title3;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'price1')
+  double? price1;
+  @JsonKey(name: 'price2')
+  double? price2;
+  @JsonKey(name: 'price3')
+  double? price3;
+
+  ManMenuNew3Response(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+
+  Map<String, dynamic> toJson() => _$ManMenuNew3ResponseToJson(this);
+  factory ManMenuNew3Response.fromJson(Map<String, dynamic> json) =>
+      _$ManMenuNew3ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class ManMenuNew4Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  ManMenuNew4Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$ManMenuNew4ResponseToJson(this);
+  factory ManMenuNew4Response.fromJson(Map<String, dynamic> json) =>
+      _$ManMenuNew4ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class ManMenuNew5Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  ManMenuNew5Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$ManMenuNew5ResponseToJson(this);
+  factory ManMenuNew5Response.fromJson(Map<String, dynamic> json) =>
+      _$ManMenuNew5ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class ManMenuNew6Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'title2')
+  String? title2;
+  @JsonKey(name: 'title3')
+  String? title3;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'price1')
+  double? price1;
+  @JsonKey(name: 'price2')
+  double? price2;
+  @JsonKey(name: 'price3')
+  double? price3;
+
+  ManMenuNew6Response(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+
+  Map<String, dynamic> toJson() => _$ManMenuNew6ResponseToJson(this);
+  factory ManMenuNew6Response.fromJson(Map<String, dynamic> json) =>
+      _$ManMenuNew6ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class WomanMenuNew1Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'image4')
+  String? image4;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  WomanMenuNew1Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.image4,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$WomanMenuNew1ResponseToJson(this);
+  factory WomanMenuNew1Response.fromJson(Map<String, dynamic> json) =>
+      _$WomanMenuNew1ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class WomanMenuNew2Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  WomanMenuNew2Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$WomanMenuNew2ResponseToJson(this);
+  factory WomanMenuNew2Response.fromJson(Map<String, dynamic> json) =>
+      _$WomanMenuNew2ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class WomanMenuNew3Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'title2')
+  String? title2;
+  @JsonKey(name: 'title3')
+  String? title3;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'price1')
+  double? price1;
+  @JsonKey(name: 'price2')
+  double? price2;
+  @JsonKey(name: 'price3')
+  double? price3;
+
+  WomanMenuNew3Response(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+
+  Map<String, dynamic> toJson() => _$WomanMenuNew3ResponseToJson(this);
+  factory WomanMenuNew3Response.fromJson(Map<String, dynamic> json) =>
+      _$WomanMenuNew3ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class WomanMenuNew4Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  WomanMenuNew4Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$WomanMenuNew4ResponseToJson(this);
+  factory WomanMenuNew4Response.fromJson(Map<String, dynamic> json) =>
+      _$WomanMenuNew4ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class WomanMenuNew5Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'price1')
+  double? price1;
+
+  WomanMenuNew5Response(
+    this.id,
+    this.title1,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+  );
+
+  Map<String, dynamic> toJson() => _$WomanMenuNew5ResponseToJson(this);
+  factory WomanMenuNew5Response.fromJson(Map<String, dynamic> json) =>
+      _$WomanMenuNew5ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class WomanMenuNew6Response {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title1')
+  String? title1;
+  @JsonKey(name: 'title2')
+  String? title2;
+  @JsonKey(name: 'title3')
+  String? title3;
+  @JsonKey(name: 'image1')
+  String? image1;
+  @JsonKey(name: 'image2')
+  String? image2;
+  @JsonKey(name: 'image3')
+  String? image3;
+  @JsonKey(name: 'price1')
+  double? price1;
+  @JsonKey(name: 'price2')
+  double? price2;
+  @JsonKey(name: 'price3')
+  double? price3;
+
+  WomanMenuNew6Response(
+    this.id,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.image1,
+    this.image2,
+    this.image3,
+    this.price1,
+    this.price2,
+    this.price3,
+  );
+
+  Map<String, dynamic> toJson() => _$WomanMenuNew6ResponseToJson(this);
+  factory WomanMenuNew6Response.fromJson(Map<String, dynamic> json) =>
+      _$WomanMenuNew6ResponseFromJson(json);
+}
+
+@JsonSerializable()
+class MenuNewCatReponse {
+  @JsonKey(name: 'man_new_1')
+  ManMenuNew1Response manMenuNew1Response;
+  @JsonKey(name: 'man_new_2')
+  ManMenuNew2Response manMenuNew2Response;
+  @JsonKey(name: 'man_new_3')
+  ManMenuNew3Response manMenuNew3Response;
+  @JsonKey(name: 'man_new_4')
+  ManMenuNew4Response manMenuNew4Response;
+  @JsonKey(name: 'man_new_5')
+  ManMenuNew5Response manMenuNew5Response;
+  @JsonKey(name: 'man_new_6')
+  ManMenuNew6Response manMenuNew6Response;
+  @JsonKey(name: 'woman_new_1')
+  WomanMenuNew1Response womanMenuNew1Response;
+  @JsonKey(name: 'woman_new_2')
+  WomanMenuNew2Response womanMenuNew2Response;
+  @JsonKey(name: 'woman_new_3')
+  WomanMenuNew3Response womanMenuNew3Response;
+  @JsonKey(name: 'woman_new_4')
+  WomanMenuNew4Response womanMenuNew4Response;
+  @JsonKey(name: 'woman_new_5')
+  WomanMenuNew5Response womanMenuNew5Response;
+  @JsonKey(name: 'woman_new_6')
+  WomanMenuNew6Response womanMenuNew6Response;
+
+  MenuNewCatReponse(
+    this.manMenuNew1Response,
+    this.manMenuNew2Response,
+    this.manMenuNew3Response,
+    this.manMenuNew4Response,
+    this.manMenuNew5Response,
+    this.manMenuNew6Response,
+    this.womanMenuNew1Response,
+    this.womanMenuNew2Response,
+    this.womanMenuNew3Response,
+    this.womanMenuNew4Response,
+    this.womanMenuNew5Response,
+    this.womanMenuNew6Response,
+  );
+  Map<String, dynamic> toJson() => _$MenuNewCatReponseToJson(this);
+  factory MenuNewCatReponse.fromJson(Map<String, dynamic> json) =>
+      _$MenuNewCatReponseFromJson(json);
+}
+
+@JsonSerializable()
+class NewCatReponse extends BaseResponse {
+  @JsonKey(name: 'data')
+  MenuNewCatReponse? data;
+
+  NewCatReponse(this.data);
+
+  Map<String, dynamic> toJson() => _$NewCatReponseToJson(this);
+  factory NewCatReponse.fromJson(Map<String, dynamic> json) =>
+      _$NewCatReponseFromJson(json);
+}

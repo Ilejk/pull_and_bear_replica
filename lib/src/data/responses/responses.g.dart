@@ -804,3 +804,335 @@ Map<String, dynamic> _$MenuResponseToJson(MenuResponse instance) =>
       'message': instance.message,
       'data': instance.data,
     };
+
+ManMenuNew1Response _$ManMenuNew1ResponseFromJson(Map<String, dynamic> json) =>
+    ManMenuNew1Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      json['image4'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$ManMenuNew1ResponseToJson(
+        ManMenuNew1Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'image4': instance.image4,
+      'price1': instance.price1,
+    };
+
+ManMenuNew2Response _$ManMenuNew2ResponseFromJson(Map<String, dynamic> json) =>
+    ManMenuNew2Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$ManMenuNew2ResponseToJson(
+        ManMenuNew2Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'price1': instance.price1,
+    };
+
+ManMenuNew3Response _$ManMenuNew3ResponseFromJson(Map<String, dynamic> json) =>
+    ManMenuNew3Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['title2'] as String?,
+      json['title3'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+      (json['price2'] as num?)?.toDouble(),
+      (json['price3'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$ManMenuNew3ResponseToJson(
+        ManMenuNew3Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'title2': instance.title2,
+      'title3': instance.title3,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'price1': instance.price1,
+      'price2': instance.price2,
+      'price3': instance.price3,
+    };
+
+ManMenuNew4Response _$ManMenuNew4ResponseFromJson(Map<String, dynamic> json) =>
+    ManMenuNew4Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$ManMenuNew4ResponseToJson(
+        ManMenuNew4Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'price1': instance.price1,
+    };
+
+ManMenuNew5Response _$ManMenuNew5ResponseFromJson(Map<String, dynamic> json) =>
+    ManMenuNew5Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$ManMenuNew5ResponseToJson(
+        ManMenuNew5Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'price1': instance.price1,
+    };
+
+ManMenuNew6Response _$ManMenuNew6ResponseFromJson(Map<String, dynamic> json) =>
+    ManMenuNew6Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['title2'] as String?,
+      json['title3'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+      (json['price2'] as num?)?.toDouble(),
+      (json['price3'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$ManMenuNew6ResponseToJson(
+        ManMenuNew6Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'title2': instance.title2,
+      'title3': instance.title3,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'price1': instance.price1,
+      'price2': instance.price2,
+      'price3': instance.price3,
+    };
+
+WomanMenuNew1Response _$WomanMenuNew1ResponseFromJson(
+        Map<String, dynamic> json) =>
+    WomanMenuNew1Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      json['image4'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$WomanMenuNew1ResponseToJson(
+        WomanMenuNew1Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'image4': instance.image4,
+      'price1': instance.price1,
+    };
+
+WomanMenuNew2Response _$WomanMenuNew2ResponseFromJson(
+        Map<String, dynamic> json) =>
+    WomanMenuNew2Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$WomanMenuNew2ResponseToJson(
+        WomanMenuNew2Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'price1': instance.price1,
+    };
+
+WomanMenuNew3Response _$WomanMenuNew3ResponseFromJson(
+        Map<String, dynamic> json) =>
+    WomanMenuNew3Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['title2'] as String?,
+      json['title3'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+      (json['price2'] as num?)?.toDouble(),
+      (json['price3'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$WomanMenuNew3ResponseToJson(
+        WomanMenuNew3Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'title2': instance.title2,
+      'title3': instance.title3,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'price1': instance.price1,
+      'price2': instance.price2,
+      'price3': instance.price3,
+    };
+
+WomanMenuNew4Response _$WomanMenuNew4ResponseFromJson(
+        Map<String, dynamic> json) =>
+    WomanMenuNew4Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$WomanMenuNew4ResponseToJson(
+        WomanMenuNew4Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'price1': instance.price1,
+    };
+
+WomanMenuNew5Response _$WomanMenuNew5ResponseFromJson(
+        Map<String, dynamic> json) =>
+    WomanMenuNew5Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$WomanMenuNew5ResponseToJson(
+        WomanMenuNew5Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'price1': instance.price1,
+    };
+
+WomanMenuNew6Response _$WomanMenuNew6ResponseFromJson(
+        Map<String, dynamic> json) =>
+    WomanMenuNew6Response(
+      json['id'] as int?,
+      json['title1'] as String?,
+      json['title2'] as String?,
+      json['title3'] as String?,
+      json['image1'] as String?,
+      json['image2'] as String?,
+      json['image3'] as String?,
+      (json['price1'] as num?)?.toDouble(),
+      (json['price2'] as num?)?.toDouble(),
+      (json['price3'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$WomanMenuNew6ResponseToJson(
+        WomanMenuNew6Response instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title1': instance.title1,
+      'title2': instance.title2,
+      'title3': instance.title3,
+      'image1': instance.image1,
+      'image2': instance.image2,
+      'image3': instance.image3,
+      'price1': instance.price1,
+      'price2': instance.price2,
+      'price3': instance.price3,
+    };
+
+MenuNewCatReponse _$MenuNewCatReponseFromJson(Map<String, dynamic> json) =>
+    MenuNewCatReponse(
+      ManMenuNew1Response.fromJson(json['man_new_1'] as Map<String, dynamic>),
+      ManMenuNew2Response.fromJson(json['man_new_2'] as Map<String, dynamic>),
+      ManMenuNew3Response.fromJson(json['man_new_3'] as Map<String, dynamic>),
+      ManMenuNew4Response.fromJson(json['man_new_4'] as Map<String, dynamic>),
+      ManMenuNew5Response.fromJson(json['man_new_5'] as Map<String, dynamic>),
+      ManMenuNew6Response.fromJson(json['man_new_6'] as Map<String, dynamic>),
+      WomanMenuNew1Response.fromJson(
+          json['woman_new_1'] as Map<String, dynamic>),
+      WomanMenuNew2Response.fromJson(
+          json['woman_new_2'] as Map<String, dynamic>),
+      WomanMenuNew3Response.fromJson(
+          json['woman_new_3'] as Map<String, dynamic>),
+      WomanMenuNew4Response.fromJson(
+          json['woman_new_4'] as Map<String, dynamic>),
+      WomanMenuNew5Response.fromJson(
+          json['woman_new_5'] as Map<String, dynamic>),
+      WomanMenuNew6Response.fromJson(
+          json['woman_new_6'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$MenuNewCatReponseToJson(MenuNewCatReponse instance) =>
+    <String, dynamic>{
+      'man_new_1': instance.manMenuNew1Response,
+      'man_new_2': instance.manMenuNew2Response,
+      'man_new_3': instance.manMenuNew3Response,
+      'man_new_4': instance.manMenuNew4Response,
+      'man_new_5': instance.manMenuNew5Response,
+      'man_new_6': instance.manMenuNew6Response,
+      'woman_new_1': instance.womanMenuNew1Response,
+      'woman_new_2': instance.womanMenuNew2Response,
+      'woman_new_3': instance.womanMenuNew3Response,
+      'woman_new_4': instance.womanMenuNew4Response,
+      'woman_new_5': instance.womanMenuNew5Response,
+      'woman_new_6': instance.womanMenuNew6Response,
+    };
+
+NewCatReponse _$NewCatReponseFromJson(Map<String, dynamic> json) =>
+    NewCatReponse(
+      json['data'] == null
+          ? null
+          : MenuNewCatReponse.fromJson(json['data'] as Map<String, dynamic>),
+    )
+      ..baseResponseStatus = json['status'] as int?
+      ..message = json['message'] as String?;
+
+Map<String, dynamic> _$NewCatReponseToJson(NewCatReponse instance) =>
+    <String, dynamic>{
+      'status': instance.baseResponseStatus,
+      'message': instance.message,
+      'data': instance.data,
+    };

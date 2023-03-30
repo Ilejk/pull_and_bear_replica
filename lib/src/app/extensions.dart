@@ -17,3 +17,13 @@ extension NonNullInt on int? {
     }
   }
 }
+
+extension NonNullDouble on double? {
+  double orZeroD() {
+    if (this == null) {
+      return 0.0;
+    } else {
+      return this!;
+    }
+  }
+}
