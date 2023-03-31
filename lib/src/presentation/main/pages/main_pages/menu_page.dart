@@ -242,7 +242,7 @@ class _MenuPageState extends State<MenuPage> {
         title,
         ColorManager.black,
         () {
-          Navigator.of(context).pushNamed(Routes.menuNewPage);
+          Navigator.of(context).pushNamed(Routes.menuNewWomanPage);
         },
       );
     } else {
@@ -424,7 +424,9 @@ class _MenuPageState extends State<MenuPage> {
         image,
         title,
         ColorManager.black,
-        () {},
+        () {
+          Navigator.of(context).pushNamed(Routes.menuNewManPage);
+        },
       );
     } else {
       return Container();

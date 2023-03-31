@@ -4,7 +4,8 @@ import 'package:pull_and_bear_replica/src/presentation/favourites/favourites_vie
 import 'package:pull_and_bear_replica/src/presentation/forgot_password/forgot_password_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/home/home_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/main/pages/main_pages/my_profile_page.dart';
-import 'package:pull_and_bear_replica/src/presentation/main/pages/menu_pages/menu_new_page.dart';
+import 'package:pull_and_bear_replica/src/presentation/main/pages/menu_pages/new/menu_new_man_page.dart';
+import 'package:pull_and_bear_replica/src/presentation/main/pages/menu_pages/new/menu_new_woman_page.dart';
 import 'package:pull_and_bear_replica/src/presentation/register/register_view.dart';
 import 'package:pull_and_bear_replica/src/presentation/resources/strings_manager.dart';
 import 'package:pull_and_bear_replica/src/presentation/splash/splash_view.dart';
@@ -18,7 +19,8 @@ class Routes {
   static const String storeDetailsRoute = '/storeDetails';
   static const String forgotPasswordRoute = '/forgotPassword';
   static const String favouritesRoute = '/favourites';
-  static const String menuNewPage = '/menuNewPage';
+  static const String menuNewWomanPage = '/menuNewWomanPage';
+  static const String menuNewManPage = '/menuNewManPage';
 }
 
 class RouteGenerator {
@@ -42,9 +44,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
       case Routes.favouritesRoute:
         return MaterialPageRoute(builder: (_) => const FavourtiesView());
-      case Routes.menuNewPage:
+      case Routes.menuNewWomanPage:
         initNewCatMenuModule();
-        return MaterialPageRoute(builder: (_) => MenuNewPage());
+        return MaterialPageRoute(builder: (_) => const MenuNewWomanPage());
+      case Routes.menuNewManPage:
+        initNewCatMenuModule();
+        return MaterialPageRoute(builder: (_) => const MenuNewManPage());
       default:
         return undefinedRoute();
     }
