@@ -840,18 +840,90 @@ extension WomanNew6Mapper on WomanMenuNew6Response? {
 
 extension MenuNewCatMapper on NewCatReponse? {
   MenuNewObject toDomain() {
-    ManNew1 mappedManNew1 = this?.data?.manMenuNew1Response as ManNew1;
-    ManNew2 mappedManNew2 = this?.data?.manMenuNew2Response as ManNew2;
-    ManNew3 mappedManNew3 = this?.data?.manMenuNew3Response as ManNew3;
-    ManNew4 mappedManNew4 = this?.data?.manMenuNew4Response as ManNew4;
-    ManNew5 mappedManNew5 = this?.data?.manMenuNew5Response as ManNew5;
-    ManNew6 mappedManNew6 = this?.data?.manMenuNew6Response as ManNew6;
-    WomanNew1 mappedWomanNew1 = this?.data?.womanMenuNew1Response as WomanNew1;
-    WomanNew2 mappedWomanNew2 = this?.data?.womanMenuNew2Response as WomanNew2;
-    WomanNew3 mappedWomanNew3 = this?.data?.womanMenuNew3Response as WomanNew3;
-    WomanNew4 mappedWomanNew4 = this?.data?.womanMenuNew4Response as WomanNew4;
-    WomanNew5 mappedWomanNew5 = this?.data?.womanMenuNew5Response as WomanNew5;
-    WomanNew6 mappedWomanNew6 = this?.data?.womanMenuNew6Response as WomanNew6;
+    List<ManNew1> mappedManNew1 = (this
+                ?.data
+                ?.manMenuNew1Response
+                ?.map((mappedManNew1) => mappedManNew1.toDomain()) ??
+            const Iterable.empty())
+        .cast<ManNew1>()
+        .toList();
+    List<ManNew2> mappedManNew2 = (this
+                ?.data
+                ?.manMenuNew2Response
+                ?.map((mappedManNew2) => mappedManNew2.toDomain()) ??
+            const Iterable.empty())
+        .cast<ManNew2>()
+        .toList();
+    List<ManNew3> mappedManNew3 = (this
+                ?.data
+                ?.manMenuNew3Response
+                ?.map((mappedManNew3) => mappedManNew3.toDomain()) ??
+            const Iterable.empty())
+        .cast<ManNew3>()
+        .toList();
+    List<ManNew4> mappedManNew4 = (this
+                ?.data
+                ?.manMenuNew4Response
+                ?.map((mappedManNew4) => mappedManNew4.toDomain()) ??
+            const Iterable.empty())
+        .cast<ManNew4>()
+        .toList();
+    List<ManNew5> mappedManNew5 = (this
+                ?.data
+                ?.manMenuNew5Response
+                ?.map((mappedManNew5) => mappedManNew5.toDomain()) ??
+            const Iterable.empty())
+        .cast<ManNew5>()
+        .toList();
+    List<ManNew6> mappedManNew6 = (this
+                ?.data
+                ?.manMenuNew6Response
+                ?.map((mappedManNew6) => mappedManNew6.toDomain()) ??
+            const Iterable.empty())
+        .cast<ManNew6>()
+        .toList();
+    List<WomanNew1> mappedWomanNew1 = (this
+                ?.data
+                ?.womanMenuNew1Response
+                ?.map((mappedWomanNew1) => mappedWomanNew1.toDomain()) ??
+            const Iterable.empty())
+        .cast<WomanNew1>()
+        .toList();
+    List<WomanNew2> mappedWomanNew2 = (this
+                ?.data
+                ?.womanMenuNew2Response
+                ?.map((mappedWomanNew2) => mappedWomanNew2.toDomain()) ??
+            const Iterable.empty())
+        .cast<WomanNew2>()
+        .toList();
+    List<WomanNew3> mappedWomanNew3 = (this
+                ?.data
+                ?.womanMenuNew3Response
+                ?.map((mappedWomanNew3) => mappedWomanNew3.toDomain()) ??
+            const Iterable.empty())
+        .cast<WomanNew3>()
+        .toList();
+    List<WomanNew4> mappedWomanNew4 = (this
+                ?.data
+                ?.womanMenuNew4Response
+                ?.map((mappedWomanNew4) => mappedWomanNew4.toDomain()) ??
+            const Iterable.empty())
+        .cast<WomanNew4>()
+        .toList();
+    List<WomanNew5> mappedWomanNew5 = (this
+                ?.data
+                ?.womanMenuNew5Response
+                ?.map((mappedWomanNew5) => mappedWomanNew5.toDomain()) ??
+            const Iterable.empty())
+        .cast<WomanNew5>()
+        .toList();
+    List<WomanNew6> mappedWomanNew6 = (this
+                ?.data
+                ?.womanMenuNew6Response
+                ?.map((mappedWomanNew6) => mappedWomanNew6.toDomain()) ??
+            const Iterable.empty())
+        .cast<WomanNew6>()
+        .toList();
 
     var data = MenuNewData(
       mappedManNew1,

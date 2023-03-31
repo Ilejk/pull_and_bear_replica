@@ -1085,24 +1085,42 @@ Map<String, dynamic> _$WomanMenuNew6ResponseToJson(
 
 MenuNewCatReponse _$MenuNewCatReponseFromJson(Map<String, dynamic> json) =>
     MenuNewCatReponse(
-      ManMenuNew1Response.fromJson(json['man_new_1'] as Map<String, dynamic>),
-      ManMenuNew2Response.fromJson(json['man_new_2'] as Map<String, dynamic>),
-      ManMenuNew3Response.fromJson(json['man_new_3'] as Map<String, dynamic>),
-      ManMenuNew4Response.fromJson(json['man_new_4'] as Map<String, dynamic>),
-      ManMenuNew5Response.fromJson(json['man_new_5'] as Map<String, dynamic>),
-      ManMenuNew6Response.fromJson(json['man_new_6'] as Map<String, dynamic>),
-      WomanMenuNew1Response.fromJson(
-          json['woman_new_1'] as Map<String, dynamic>),
-      WomanMenuNew2Response.fromJson(
-          json['woman_new_2'] as Map<String, dynamic>),
-      WomanMenuNew3Response.fromJson(
-          json['woman_new_3'] as Map<String, dynamic>),
-      WomanMenuNew4Response.fromJson(
-          json['woman_new_4'] as Map<String, dynamic>),
-      WomanMenuNew5Response.fromJson(
-          json['woman_new_5'] as Map<String, dynamic>),
-      WomanMenuNew6Response.fromJson(
-          json['woman_new_6'] as Map<String, dynamic>),
+      (json['man_new_1'] as List<dynamic>)
+          .map((e) => ManMenuNew1Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['man_new_2'] as List<dynamic>)
+          .map((e) => ManMenuNew2Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['man_new_3'] as List<dynamic>)
+          .map((e) => ManMenuNew3Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['man_new_4'] as List<dynamic>)
+          .map((e) => ManMenuNew4Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['man_new_5'] as List<dynamic>)
+          .map((e) => ManMenuNew5Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['man_new_6'] as List<dynamic>)
+          .map((e) => ManMenuNew6Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['woman_new_1'] as List<dynamic>)
+          .map((e) => WomanMenuNew1Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['woman_new_2'] as List<dynamic>)
+          .map((e) => WomanMenuNew2Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['woman_new_3'] as List<dynamic>)
+          .map((e) => WomanMenuNew3Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['woman_new_4'] as List<dynamic>)
+          .map((e) => WomanMenuNew4Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['woman_new_5'] as List<dynamic>)
+          .map((e) => WomanMenuNew5Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['woman_new_6'] as List<dynamic>)
+          .map((e) => WomanMenuNew6Response.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$MenuNewCatReponseToJson(MenuNewCatReponse instance) =>

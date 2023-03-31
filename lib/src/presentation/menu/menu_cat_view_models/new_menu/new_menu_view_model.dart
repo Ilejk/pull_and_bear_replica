@@ -17,10 +17,10 @@ class NewMenuViewModel extends BaseViewModel
   NewMenuViewModel(this._menuNewCatUseCase);
 
   @override
-  Sink get inputMenuData => _dataStreamController.sink;
+  Sink get inputNewMenuData => _dataStreamController.sink;
 
   @override
-  Stream<NewMenuViewObject> get outputMenuData =>
+  Stream<NewMenuViewObject> get outputNewMenuData =>
       _dataStreamController.stream.map((data) => data);
 
   @override
@@ -44,7 +44,7 @@ class NewMenuViewModel extends BaseViewModel
       );
     }, (newMenuObject) {
       inputState.add(ContentState());
-      inputMenuData.add(NewMenuViewObject(
+      inputNewMenuData.add(NewMenuViewObject(
         newMenuObject.data.manNew1,
         newMenuObject.data.manNew2,
         newMenuObject.data.manNew3,
@@ -63,26 +63,26 @@ class NewMenuViewModel extends BaseViewModel
 }
 
 abstract class NewMenuViewModelInputs {
-  Sink get inputMenuData;
+  Sink get inputNewMenuData;
 }
 
 abstract class NewMenuViewModelOutputs {
-  Stream<NewMenuViewObject> get outputMenuData;
+  Stream<NewMenuViewObject> get outputNewMenuData;
 }
 
 class NewMenuViewObject {
-  ManNew1 manNew1;
-  ManNew2 manNew2;
-  ManNew3 manNew3;
-  ManNew4 manNew4;
-  ManNew5 manNew5;
-  ManNew6 manNew6;
-  WomanNew1 womanNew1;
-  WomanNew2 womanNew2;
-  WomanNew3 womanNew3;
-  WomanNew4 womanNew4;
-  WomanNew5 womanNew5;
-  WomanNew6 womanNew6;
+  List<ManNew1> manNew1;
+  List<ManNew2> manNew2;
+  List<ManNew3> manNew3;
+  List<ManNew4> manNew4;
+  List<ManNew5> manNew5;
+  List<ManNew6> manNew6;
+  List<WomanNew1> womanNew1;
+  List<WomanNew2> womanNew2;
+  List<WomanNew3> womanNew3;
+  List<WomanNew4> womanNew4;
+  List<WomanNew5> womanNew5;
+  List<WomanNew6> womanNew6;
   NewMenuViewObject(
     this.manNew1,
     this.manNew2,

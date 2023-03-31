@@ -1286,29 +1286,29 @@ class WomanMenuNew6Response {
 @JsonSerializable()
 class MenuNewCatReponse {
   @JsonKey(name: 'man_new_1')
-  ManMenuNew1Response manMenuNew1Response;
+  List<ManMenuNew1Response>? manMenuNew1Response;
   @JsonKey(name: 'man_new_2')
-  ManMenuNew2Response manMenuNew2Response;
+  List<ManMenuNew2Response>? manMenuNew2Response;
   @JsonKey(name: 'man_new_3')
-  ManMenuNew3Response manMenuNew3Response;
+  List<ManMenuNew3Response>? manMenuNew3Response;
   @JsonKey(name: 'man_new_4')
-  ManMenuNew4Response manMenuNew4Response;
+  List<ManMenuNew4Response>? manMenuNew4Response;
   @JsonKey(name: 'man_new_5')
-  ManMenuNew5Response manMenuNew5Response;
+  List<ManMenuNew5Response>? manMenuNew5Response;
   @JsonKey(name: 'man_new_6')
-  ManMenuNew6Response manMenuNew6Response;
+  List<ManMenuNew6Response>? manMenuNew6Response;
   @JsonKey(name: 'woman_new_1')
-  WomanMenuNew1Response womanMenuNew1Response;
+  List<WomanMenuNew1Response>? womanMenuNew1Response;
   @JsonKey(name: 'woman_new_2')
-  WomanMenuNew2Response womanMenuNew2Response;
+  List<WomanMenuNew2Response>? womanMenuNew2Response;
   @JsonKey(name: 'woman_new_3')
-  WomanMenuNew3Response womanMenuNew3Response;
+  List<WomanMenuNew3Response>? womanMenuNew3Response;
   @JsonKey(name: 'woman_new_4')
-  WomanMenuNew4Response womanMenuNew4Response;
+  List<WomanMenuNew4Response>? womanMenuNew4Response;
   @JsonKey(name: 'woman_new_5')
-  WomanMenuNew5Response womanMenuNew5Response;
+  List<WomanMenuNew5Response>? womanMenuNew5Response;
   @JsonKey(name: 'woman_new_6')
-  WomanMenuNew6Response womanMenuNew6Response;
+  List<WomanMenuNew6Response>? womanMenuNew6Response;
 
   MenuNewCatReponse(
     this.manMenuNew1Response,

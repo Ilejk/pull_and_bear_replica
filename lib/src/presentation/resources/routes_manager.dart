@@ -44,7 +44,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const FavourtiesView());
       case Routes.menuNewPage:
         initNewCatMenuModule();
-        return MaterialPageRoute(builder: (_) => const MenuNewPage());
+        return MaterialPageRoute(builder: (_) => MenuNewPage());
       default:
         return undefinedRoute();
     }
